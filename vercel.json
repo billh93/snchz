@@ -1,0 +1,14 @@
+{
+  "functions": {
+    "api/**/*.php": {
+      "runtime": "vercel-php@0.6.0"
+    }
+  },
+  "rewrites": [
+    {
+      "source": "/api/contact",
+      "destination": "/api/contact.php"
+    }
+  ]
+}
+
