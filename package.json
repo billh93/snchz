@@ -1,0 +1,9 @@
+{
+  "name": "snchz-portfolio",
+  "version": "1.0.0",
+  "description": "Portfolio website for Bill Snchz",
+  "engines": {
+    "node": "20.x"
+  }
+}
+
