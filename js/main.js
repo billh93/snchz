@@ -306,7 +306,7 @@
 
         //Google Maps
         if ($(".lmpixels-map")[0]){
-            var address = 'San Francisco, S601 Townsend Street, California, USA', //Replace with Your Address
+            var address = '200 E Randolph St, Chicago, IL 60601', //Replace with Your Address
                 address = encodeURIComponent(address),
                 src = 'https://maps.google.com/maps?q=' + address + '&amp;t=m&amp;z=16&amp;output=embed&amp;iwloc=near&output=embed';
             $(".lmpixels-map iframe").attr("src", src);
