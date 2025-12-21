@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Portfolio website for Bill Snchz",
   "engines": {
-    "node": "20.x"
+    "node": "22.x"
   },
   "scripts": {
     "dev": "live-server --port=8000 --open=/index.html"
