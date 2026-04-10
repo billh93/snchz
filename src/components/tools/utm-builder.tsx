@@ -38,7 +38,7 @@ const SOURCE_PRESETS: { label: string; params: Partial<UtmParams> }[] = [
 ];
 
 const INPUT_CLASS =
-  "w-full rounded-lg border border-border/50 bg-background/50 px-3 py-2.5 text-sm text-foreground transition-colors placeholder:text-muted-foreground/40 focus:border-golden/40 focus:outline-none focus:ring-1 focus:ring-golden/20";
+  "w-full rounded-lg border border-border/50 bg-background/50 px-3 py-2.5 text-sm text-foreground transition-colors placeholder:text-muted-foreground/40 focus:border-foreground/20 focus:outline-none focus:ring-1 focus:ring-foreground/10";
 
 const STORAGE_KEY = "snchz-utm-presets";
 
@@ -140,7 +140,7 @@ export function UtmBuilder() {
           <div className="space-y-4">
             <div>
               <label className="mb-1.5 block text-sm font-medium text-foreground/80">
-                Base URL <span className="text-golden/70">*</span>
+                Base URL <span className="text-foreground/55">*</span>
               </label>
               <input
                 type="url"
@@ -225,7 +225,7 @@ export function UtmBuilder() {
               <button
                 key={p.label}
                 onClick={() => setParams((prev) => ({ ...prev, ...p.params }))}
-                className="rounded-md border border-border/40 px-2.5 py-1 text-xs text-muted-foreground transition-colors hover:border-golden/30 hover:text-golden"
+                className="rounded-md border border-border/40 px-2.5 py-1 text-xs text-muted-foreground transition-colors hover:border-foreground/15 hover:text-foreground"
               >
                 {p.label}
               </button>
@@ -248,7 +248,7 @@ export function UtmBuilder() {
             <button
               onClick={handleSavePreset}
               disabled={!presetName.trim()}
-              className="flex shrink-0 items-center gap-1.5 rounded-lg border border-border/50 px-3 py-2 text-xs font-medium text-foreground transition-colors hover:border-golden/30 hover:text-golden disabled:opacity-40"
+              className="flex shrink-0 items-center gap-1.5 rounded-lg border border-border/50 px-3 py-2 text-xs font-medium text-foreground transition-colors hover:border-foreground/15 hover:text-foreground disabled:opacity-40"
             >
               <Save className="h-3.5 w-3.5" />
               Save
@@ -319,7 +319,7 @@ export function UtmBuilder() {
               </div>
               <button
                 onClick={handleCopy}
-                className="mt-4 flex w-full items-center justify-center gap-2 rounded-lg bg-golden/90 px-4 py-2.5 text-sm font-medium text-background transition-colors hover:bg-golden"
+                className="mt-4 flex w-full items-center justify-center gap-2 rounded-lg bg-foreground/90 px-4 py-2.5 text-sm font-medium text-background transition-colors hover:bg-foreground/90"
               >
                 {copied ? <Check className="h-4 w-4" /> : <Copy className="h-4 w-4" />}
                 {copied ? "Copied!" : "Copy URL"}
@@ -343,7 +343,7 @@ export function UtmBuilder() {
                       key={p.param}
                       className="flex items-center justify-between rounded-md border border-border/30 px-3 py-2"
                     >
-                      <span className="font-mono text-xs text-golden/70">{p.param}</span>
+                      <span className="font-mono text-xs text-foreground/55">{p.param}</span>
                       <span className="text-sm text-foreground">{p.value}</span>
                     </div>
                   ))}

@@ -1,0 +1,54 @@
+# Bill Hinostroza — Product Engineer
+
+> Serial builder with 5 SaaS exits. Full-stack product engineer building with Next.js, Python, FastAPI, and AI.
+
+## About
+
+Bill Hinostroza is a product engineer who builds products from zero to acquisition. Over five years, he designed, engineered, and shipped five SaaS platforms — each acquired. He works across the entire stack: TypeScript, Python, React, Next.js, FastAPI, PostgreSQL, AWS, Vercel, and AI/ML (OpenAI, Anthropic, Deepgram).
+
+He currently runs Abriz (abriz.ai), his frontier lab for emerging technology, and is seeking product engineer roles at companies building tools for developers and creators.
+
+## Key Projects
+
+- [Abriz](https://abriz.ai): Frontier lab for emerging technology. ERP, AI, and developer tools. Active since Jan 2026.
+- [Riftmatch](https://riftmatch.com): Competitive gaming matchmaking platform. Real-time rankings and tournaments. Active since Apr 2026.
+- [Cue by Abriz](https://cue.abriz.ai): AI-native productivity tool built under the Abriz lab. Active since Jan 2026.
+- Up-Time.io: Uptime monitoring with smart alerting and status pages. Built solo in PHP. Acquired.
+- Web-Analytics.ai: Privacy-first web analytics and reporting. Built in PHP. Acquired.
+- [dope.link](https://dope.link): Link-in-bio product built in PHP. Acquired 2022.
+
+## Free Tools
+
+Bill built 13 free tools available at https://snchz.co/tools:
+
+- QR Code Generator: Custom QR codes for URLs, WiFi, email, text
+- SaaS Metrics Calculator: MRR, churn, LTV, CAC with benchmarks
+- AI Prompt Lab: Test prompts with GPT-4o Mini
+- AI Bio Generator: Professional bios for any platform
+- Social Preview Cards: Open Graph preview for Twitter, Facebook, LinkedIn
+- UTM Link Builder: Campaign-tracked URL builder
+- JSON / JWT / Cron Debugger: Format, decode, and debug
+- Invoice Generator: Professional invoices, print to PDF
+- Link in Bio Builder: Downloadable link page
+- Changelog Generator: Structured release notes
+- Waitlist Page Generator: Coming-soon landing pages
+- Device Mockup: Screenshot framing in device mockups
+- Uptime Checker: Browser-side URL latency checks
+
+## Tech Stack
+
+- Frontend: Next.js, React, TypeScript, Tailwind CSS
+- Backend: Python, FastAPI, Node.js, PostgreSQL
+- AI/ML: OpenAI, Anthropic, Deepgram, Vercel AI SDK
+- Infrastructure: Vercel, Supabase, Railway, AWS
+
+## Contact
+
+- Email: bill@abriz.ai
+- GitHub: https://github.com/billh93
+- LinkedIn: https://www.linkedin.com/in/bill-hinostroza/
+- Website: https://snchz.co
+
+## Target Roles
+
+Product engineer, full-stack engineer, or founding engineer at companies building developer tools, AI products, or creative platforms. Examples: Anthropic, OpenAI, Figma, Linear, Replit, Vercel.

@@ -17,7 +17,7 @@ export function Nav() {
         <div className="flex h-16 items-center justify-between">
           <Link
             href="/"
-            className="font-display text-lg font-bold tracking-tight text-foreground transition-colors hover:text-golden"
+            className="font-display text-lg font-bold tracking-tight text-foreground transition-colors hover:text-foreground"
           >
             {SITE.name}
           </Link>
@@ -31,7 +31,7 @@ export function Nav() {
                 className={cn(
                   "text-sm font-medium transition-colors",
                   pathname === item.href
-                    ? "text-golden"
+                    ? "text-foreground/80"
                     : "text-muted-foreground hover:text-foreground"
                 )}
               >
@@ -88,7 +88,7 @@ export function Nav() {
                   className={cn(
                     "text-lg font-medium transition-colors",
                     pathname === item.href
-                      ? "text-golden"
+                      ? "text-foreground/80"
                       : "text-muted-foreground"
                   )}
                 >

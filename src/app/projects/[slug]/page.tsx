@@ -46,7 +46,7 @@ export default async function ProjectDetail({
           <FadeIn>
             <Link
               href="/projects"
-              className="mb-8 inline-flex items-center gap-2 text-sm text-muted-foreground transition-colors hover:text-golden"
+              className="mb-8 inline-flex items-center gap-2 text-sm text-muted-foreground transition-colors hover:text-foreground"
             >
               <ArrowLeft className="h-3 w-3" />
               All Projects
@@ -57,7 +57,7 @@ export default async function ProjectDetail({
                 {project.name}
               </h1>
               {project.status === "acquired" && (
-                <span className="rounded-full bg-golden/10 px-3 py-1 text-sm font-medium text-golden">
+                <span className="rounded-full bg-foreground/[0.07] px-3 py-1 text-sm font-medium text-foreground/60">
                   {project.metrics ?? "Acquired"}
                 </span>
               )}
@@ -74,7 +74,7 @@ export default async function ProjectDetail({
                   href={project.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1.5 text-sm text-golden transition-colors hover:text-golden/80"
+                  className="inline-flex items-center gap-1.5 text-sm text-foreground/70 transition-colors hover:text-foreground"
                 >
                   <ExternalLink className="h-3 w-3" />
                   Visit
@@ -85,7 +85,7 @@ export default async function ProjectDetail({
                   href={project.github}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1.5 text-sm text-muted-foreground transition-colors hover:text-golden"
+                  className="inline-flex items-center gap-1.5 text-sm text-muted-foreground transition-colors hover:text-foreground"
                 >
                   <GitHubIcon className="h-3 w-3" />
                   Source

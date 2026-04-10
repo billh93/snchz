@@ -12,18 +12,21 @@ export function ProjectsSection() {
         <FadeIn>
           <div className="mb-12 flex items-end justify-between">
             <div>
-              <p className="mb-2 font-mono text-xs uppercase tracking-widest text-golden">
+              <p className="mb-2 font-mono text-xs uppercase tracking-widest text-foreground/50">
                 Selected Work
               </p>
               <h2 className="font-display text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
                 Products I&apos;ve shipped
               </h2>
+              <p className="mt-3 max-w-lg text-muted-foreground">
+                Products I&apos;ve built, from SaaS platforms to AI-powered analytics. Five exits and counting.
+              </p>
             </div>
             <Link
               href="/projects"
-              className="hidden text-sm text-muted-foreground transition-colors hover:text-golden sm:block"
+              className="hidden text-sm text-muted-foreground transition-colors hover:text-foreground sm:block"
             >
-              View all →
+              View all &rarr;
             </Link>
           </div>
         </FadeIn>
@@ -37,9 +40,9 @@ export function ProjectsSection() {
         <div className="mt-6 sm:hidden">
           <Link
             href="/projects"
-            className="text-sm text-muted-foreground transition-colors hover:text-golden"
+            className="text-sm text-muted-foreground transition-colors hover:text-foreground"
           >
-            View all projects →
+            View all projects &rarr;
           </Link>
         </div>
       </div>

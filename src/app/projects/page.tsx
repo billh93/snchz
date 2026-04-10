@@ -6,9 +6,9 @@ import { FadeIn, StaggerChildren } from "@/components/motion";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Projects",
+  title: "Projects by Bill Hinostroza — 5 SaaS Exits",
   description:
-    "Products I've built, from SaaS platforms to AI-powered analytics. Five exits and counting.",
+    "Products built by Bill Hinostroza, from SaaS platforms to AI-powered analytics. Five acquisitions and counting.",
 };
 
 export default function ProjectsPage() {
@@ -20,7 +20,7 @@ export default function ProjectsPage() {
         <div className="mx-auto max-w-7xl">
           <FadeIn>
             <div className="mb-16">
-              <p className="mb-2 font-mono text-xs uppercase tracking-widest text-golden">
+              <p className="mb-2 font-mono text-xs uppercase tracking-widest text-foreground/50">
                 All Projects
               </p>
               <h1 className="font-display text-4xl font-bold tracking-tight text-foreground sm:text-5xl">

@@ -40,7 +40,7 @@ const BG_PRESETS = [
 ];
 
 const INPUT_CLASS =
-  "w-full rounded-lg border border-border/50 bg-background/50 px-3 py-2.5 text-sm text-foreground transition-colors placeholder:text-muted-foreground/40 focus:border-golden/40 focus:outline-none focus:ring-1 focus:ring-golden/20";
+  "w-full rounded-lg border border-border/50 bg-background/50 px-3 py-2.5 text-sm text-foreground transition-colors placeholder:text-muted-foreground/40 focus:border-foreground/20 focus:outline-none focus:ring-1 focus:ring-foreground/10";
 
 function BrowserFrame({ children }: { children: React.ReactNode }) {
   return (
@@ -408,7 +408,7 @@ export function DeviceMockup() {
                 className={cn(
                   "flex flex-1 items-center justify-center gap-1.5 rounded-md px-3 py-1.5 text-xs font-medium transition-colors",
                   imageSource === src
-                    ? "bg-golden/15 text-golden"
+                    ? "bg-foreground/[0.08] text-foreground/80"
                     : "text-muted-foreground hover:text-foreground"
                 )}
               >
@@ -454,7 +454,7 @@ export function DeviceMockup() {
               />
               <button
                 onClick={handleUrlLoad}
-                className="shrink-0 rounded-lg border border-border/50 bg-surface/30 px-3 py-2.5 text-sm text-foreground transition-colors hover:border-golden/30 hover:text-golden"
+                className="shrink-0 rounded-lg border border-border/50 bg-surface/30 px-3 py-2.5 text-sm text-foreground transition-colors hover:border-foreground/15 hover:text-foreground"
               >
                 Load
               </button>
@@ -477,7 +477,7 @@ export function DeviceMockup() {
                   className={cn(
                     "flex flex-col items-center gap-1 rounded-md px-2 py-2 text-[10px] font-medium transition-colors",
                     device === d.value
-                      ? "bg-golden/15 text-golden"
+                      ? "bg-foreground/[0.08] text-foreground/80"
                       : "text-muted-foreground hover:text-foreground"
                   )}
                 >
@@ -517,7 +517,7 @@ export function DeviceMockup() {
                 className={cn(
                   "h-8 w-full rounded-md border transition-all",
                   bgColor === color
-                    ? "border-golden/60 ring-1 ring-golden/30"
+                    ? "border-foreground/25 ring-1 ring-foreground/15"
                     : "border-border/30 hover:border-border/60"
                 )}
                 style={{ backgroundColor: color }}
@@ -532,7 +532,7 @@ export function DeviceMockup() {
             animate={{ opacity: 1, y: 0 }}
             onClick={handleExport}
             disabled={isExporting}
-            className="flex w-full items-center justify-center gap-2 rounded-lg bg-golden/90 px-4 py-2.5 text-sm font-medium text-background transition-colors hover:bg-golden disabled:opacity-50"
+            className="flex w-full items-center justify-center gap-2 rounded-lg bg-foreground/90 px-4 py-2.5 text-sm font-medium text-background transition-colors hover:bg-foreground/90 disabled:opacity-50"
           >
             <Download className="h-4 w-4" />
             {isExporting ? "Exporting..." : "Download PNG (2x)"}

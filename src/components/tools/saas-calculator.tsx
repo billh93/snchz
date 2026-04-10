@@ -265,9 +265,9 @@ export function SaasCalculator() {
               salesMarketingSpend: "15000",
             })
           }
-          className="w-full rounded-lg border border-dashed border-border/40 p-3 text-left text-xs text-muted-foreground transition-colors hover:border-golden/30 hover:text-foreground"
+          className="w-full rounded-lg border border-dashed border-border/40 p-3 text-left text-xs text-muted-foreground transition-colors hover:border-foreground/15 hover:text-foreground"
         >
-          <span className="font-medium text-golden/80">Try an example</span>
+          <span className="font-medium text-foreground/65">Try an example</span>
           <span className="ml-1">
             $50K MRR, 500 customers, $15K spend
           </span>
@@ -335,7 +335,7 @@ function InputField({
           value={value}
           onChange={onChange}
           className={cn(
-            "w-full rounded-lg border border-border/50 bg-background/50 px-3 py-2.5 text-sm text-foreground transition-colors placeholder:text-muted-foreground/40 focus:border-golden/40 focus:outline-none focus:ring-1 focus:ring-golden/20",
+            "w-full rounded-lg border border-border/50 bg-background/50 px-3 py-2.5 text-sm text-foreground transition-colors placeholder:text-muted-foreground/40 focus:border-foreground/20 focus:outline-none focus:ring-1 focus:ring-foreground/10",
             prefix && "pl-7"
           )}
         />

@@ -23,7 +23,7 @@ export default function ChangelogGeneratorPage() {
         <div className="mx-auto max-w-7xl">
           <FadeIn>
             <div className="mb-12">
-              <p className="mb-2 font-mono text-xs uppercase tracking-widest text-golden">
+              <p className="mb-2 font-mono text-xs uppercase tracking-widest text-foreground/80">
                 Free Tool
               </p>
               <h1 className="font-display text-4xl font-bold tracking-tight text-foreground sm:text-5xl">

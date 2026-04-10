@@ -2,7 +2,6 @@
 
 import { useEffect, useRef, useCallback } from "react";
 
-// Simplex-inspired noise, compact 2D implementation
 function createNoise() {
   const perm = new Uint8Array(512);
   const p = new Uint8Array(256);
@@ -52,18 +51,17 @@ type Particle = {
   vy: number;
   life: number;
   maxLife: number;
-  hue: number;
+  brightness: number;
   size: number;
 };
 
-const PARTICLE_COUNT = 1500;
+const PARTICLE_COUNT = 1800;
 const NOISE_SCALE = 0.003;
-const NOISE_SPEED = 0.0003;
-const FLOW_STRENGTH = 1.2;
+const NOISE_SPEED = 0.0002;
+const FLOW_STRENGTH = 1.0;
 const CURSOR_RADIUS = 150;
 const CURSOR_FORCE = 3;
 const FRICTION = 0.97;
-const GOLDEN_RATIO = 0.08;
 
 export function FlowField() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -76,16 +74,16 @@ export function FlowField() {
 
   const createParticle = useCallback(
     (w: number, h: number): Particle => {
-      const isGolden = Math.random() < GOLDEN_RATIO;
+      const bright = Math.random() < 0.06;
       return {
         x: Math.random() * w,
         y: Math.random() * h,
         vx: 0,
         vy: 0,
         life: 0,
-        maxLife: 200 + Math.random() * 300,
-        hue: isGolden ? 85 : 275,
-        size: isGolden ? 1.5 + Math.random() : 0.8 + Math.random() * 0.8,
+        maxLife: 200 + Math.random() * 400,
+        brightness: bright ? 0.85 + Math.random() * 0.1 : 0.25 + Math.random() * 0.2,
+        size: bright ? 1.2 + Math.random() * 0.5 : 0.6 + Math.random() * 0.6,
       };
     },
     []
@@ -122,20 +120,16 @@ export function FlowField() {
     );
 
     if (prefersReducedMotion.current) {
-      ctx.fillStyle = "oklch(0.13 0.025 275)";
+      ctx.fillStyle = "#0d0d0d";
       ctx.fillRect(0, 0, w, h);
 
       const gradient = ctx.createRadialGradient(
-        w * 0.3,
-        h * 0.4,
-        0,
-        w * 0.5,
-        h * 0.5,
-        w * 0.6
+        w * 0.3, h * 0.4, 0,
+        w * 0.5, h * 0.5, w * 0.6
       );
-      gradient.addColorStop(0, "oklch(0.20 0.04 275 / 0.4)");
-      gradient.addColorStop(0.5, "oklch(0.15 0.025 275 / 0.2)");
-      gradient.addColorStop(1, "oklch(0.13 0.025 275 / 0)");
+      gradient.addColorStop(0, "rgba(255,255,255,0.03)");
+      gradient.addColorStop(0.5, "rgba(255,255,255,0.01)");
+      gradient.addColorStop(1, "rgba(255,255,255,0)");
       ctx.fillStyle = gradient;
       ctx.fillRect(0, 0, w, h);
       return;
@@ -146,7 +140,7 @@ export function FlowField() {
       const ch = window.innerHeight;
       timeRef.current += NOISE_SPEED;
 
-      ctx.fillStyle = "oklch(0.13 0.025 275 / 0.08)";
+      ctx.fillStyle = "rgba(13,13,13,0.06)";
       ctx.fillRect(0, 0, cw, ch);
 
       const mx = mouseRef.current.x;
@@ -193,14 +187,11 @@ export function FlowField() {
             ? 1 - (lifePct - 0.8) / 0.2
             : 1;
 
-        const isGolden = p.hue === 85;
-        const lightness = isGolden ? 0.78 : 0.45 + Math.random() * 0.15;
-        const chroma = isGolden ? 0.15 : 0.03;
-        const alpha = fade * (isGolden ? 0.7 : 0.35);
+        const alpha = fade * (p.brightness > 0.7 ? 0.6 : 0.2);
 
         ctx.beginPath();
         ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
-        ctx.fillStyle = `oklch(${lightness} ${chroma} ${p.hue} / ${alpha})`;
+        ctx.fillStyle = `rgba(255,255,255,${alpha})`;
         ctx.fill();
       }
 

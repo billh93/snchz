@@ -45,7 +45,7 @@ function uid() {
 }
 
 const INPUT_CLASS =
-  "w-full rounded-lg border border-border/50 bg-background/50 px-3 py-2.5 text-sm text-foreground transition-colors placeholder:text-muted-foreground/40 focus:border-golden/40 focus:outline-none focus:ring-1 focus:ring-golden/20";
+  "w-full rounded-lg border border-border/50 bg-background/50 px-3 py-2.5 text-sm text-foreground transition-colors placeholder:text-muted-foreground/40 focus:border-foreground/20 focus:outline-none focus:ring-1 focus:ring-foreground/10";
 
 function socialSvg(key: keyof Socials): string {
   const svgs: Record<keyof Socials, string> = {
@@ -249,7 +249,7 @@ export function LinkInBio() {
                 className={cn(
                   "flex flex-1 flex-col items-center gap-2 rounded-lg border p-3 transition-all",
                   theme === t.value
-                    ? "border-golden/50 bg-golden/5"
+                    ? "border-foreground/20 bg-foreground/[0.04]"
                     : "border-border/40 hover:border-border"
                 )}
               >
@@ -321,7 +321,7 @@ export function LinkInBio() {
           </div>
           <button
             onClick={addLink}
-            className="mt-3 flex w-full items-center justify-center gap-2 rounded-lg border border-dashed border-border/50 py-2.5 text-sm text-muted-foreground transition-colors hover:border-golden/30 hover:text-foreground"
+            className="mt-3 flex w-full items-center justify-center gap-2 rounded-lg border border-dashed border-border/50 py-2.5 text-sm text-muted-foreground transition-colors hover:border-foreground/15 hover:text-foreground"
           >
             <Plus size={14} />
             Add Link
@@ -355,7 +355,7 @@ export function LinkInBio() {
         <div className="flex gap-3">
           <button
             onClick={handleDownload}
-            className="flex flex-1 items-center justify-center gap-2 rounded-lg bg-golden px-4 py-2.5 text-sm font-medium text-background transition-opacity hover:opacity-90"
+            className="flex flex-1 items-center justify-center gap-2 rounded-lg bg-foreground px-4 py-2.5 text-sm font-medium text-background transition-opacity hover:opacity-90"
           >
             <Download size={15} />
             Download HTML

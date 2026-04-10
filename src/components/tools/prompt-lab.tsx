@@ -140,7 +140,7 @@ export function PromptLab() {
                 placeholder="You are a helpful assistant..."
                 rows={3}
                 maxLength={1000}
-                className="w-full resize-none rounded-lg border border-border/50 bg-background/50 px-3 py-2.5 text-sm text-foreground transition-colors placeholder:text-muted-foreground/40 focus:border-golden/40 focus:outline-none focus:ring-1 focus:ring-golden/20"
+                className="w-full resize-none rounded-lg border border-border/50 bg-background/50 px-3 py-2.5 text-sm text-foreground transition-colors placeholder:text-muted-foreground/40 focus:border-foreground/20 focus:outline-none focus:ring-1 focus:ring-foreground/10"
               />
             </div>
 
@@ -154,7 +154,7 @@ export function PromptLab() {
                 placeholder="Write your prompt here..."
                 rows={5}
                 maxLength={2000}
-                className="w-full resize-none rounded-lg border border-border/50 bg-background/50 px-3 py-2.5 text-sm text-foreground transition-colors placeholder:text-muted-foreground/40 focus:border-golden/40 focus:outline-none focus:ring-1 focus:ring-golden/20"
+                className="w-full resize-none rounded-lg border border-border/50 bg-background/50 px-3 py-2.5 text-sm text-foreground transition-colors placeholder:text-muted-foreground/40 focus:border-foreground/20 focus:outline-none focus:ring-1 focus:ring-foreground/10"
               />
               <p className="mt-1 text-right text-[10px] text-muted-foreground/40">
                 {prompt.length}/2000
@@ -166,7 +166,7 @@ export function PromptLab() {
                 <label className="text-sm font-medium text-foreground/80">
                   Temperature
                 </label>
-                <span className="font-mono text-xs text-golden">
+                <span className="font-mono text-xs text-foreground/80">
                   {temperature.toFixed(1)}
                 </span>
               </div>
@@ -177,7 +177,7 @@ export function PromptLab() {
                 step={0.1}
                 value={temperature}
                 onChange={(e) => setTemperature(parseFloat(e.target.value))}
-                className="w-full accent-golden"
+                className="w-full accent-foreground"
               />
               <div className="flex justify-between text-[10px] text-muted-foreground/40">
                 <span>Precise</span>
@@ -190,7 +190,7 @@ export function PromptLab() {
             <button
               onClick={handleRun}
               disabled={!prompt.trim() || loading}
-              className="flex flex-1 items-center justify-center gap-2 rounded-lg bg-golden px-4 py-2.5 text-sm font-semibold text-golden-foreground transition-all hover:brightness-110 active:scale-[0.98] disabled:opacity-40"
+              className="flex flex-1 items-center justify-center gap-2 rounded-lg bg-foreground px-4 py-2.5 text-sm font-semibold text-background transition-all hover:brightness-110 active:scale-[0.98] disabled:opacity-40"
             >
               {loading ? (
                 <Loader2 className="h-4 w-4 animate-spin" />
@@ -205,7 +205,7 @@ export function PromptLab() {
                 setSystem("");
                 setTemperature(0.7);
               }}
-              className="flex items-center justify-center rounded-lg border border-border/60 bg-surface/30 px-3 py-2.5 text-muted-foreground transition-all hover:border-golden/30 hover:text-foreground"
+              className="flex items-center justify-center rounded-lg border border-border/60 bg-surface/30 px-3 py-2.5 text-muted-foreground transition-all hover:border-foreground/15 hover:text-foreground"
             >
               <RotateCcw className="h-4 w-4" />
             </button>
@@ -221,9 +221,9 @@ export function PromptLab() {
             <button
               key={ex.label}
               onClick={() => loadExample(ex)}
-              className="w-full rounded-lg border border-dashed border-border/40 p-3 text-left text-xs text-muted-foreground transition-colors hover:border-golden/30 hover:text-foreground"
+              className="w-full rounded-lg border border-dashed border-border/40 p-3 text-left text-xs text-muted-foreground transition-colors hover:border-foreground/15 hover:text-foreground"
             >
-              <span className="font-medium text-golden/80">{ex.label}</span>
+              <span className="font-medium text-foreground/65">{ex.label}</span>
               <span className="ml-1 line-clamp-1">{ex.prompt}</span>
             </button>
           ))}
@@ -264,7 +264,7 @@ export function PromptLab() {
               >
                 <div className="mb-3 flex items-start justify-between gap-4">
                   <div className="flex flex-wrap items-center gap-2">
-                    <span className="rounded-md bg-golden/10 px-2 py-0.5 font-mono text-[10px] text-golden">
+                    <span className="rounded-md bg-foreground/[0.06] px-2 py-0.5 font-mono text-[10px] text-foreground/80">
                       Run #{runs.length - idx}
                     </span>
                     <span className="font-mono text-[10px] text-muted-foreground/50">

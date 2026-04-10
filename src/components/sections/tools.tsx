@@ -49,7 +49,7 @@ export function ToolsSection() {
       <div className="mx-auto max-w-7xl">
         <FadeIn>
           <div className="mb-12">
-            <p className="mb-2 font-mono text-xs uppercase tracking-widest text-golden">
+            <p className="mb-2 font-mono text-xs uppercase tracking-widest text-foreground/50">
               Free Tools
             </p>
             <h2 className="font-display text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
@@ -67,26 +67,26 @@ export function ToolsSection() {
             <motion.div key={tool.slug} variants={cardVariants}>
               <Link
                 href={tool.href}
-                className="group relative block overflow-hidden rounded-lg border border-border/50 bg-surface/30 p-6 backdrop-blur-sm transition-all duration-300 hover:border-golden/20 hover:bg-surface/50"
+                className="group relative block overflow-hidden rounded-lg border border-border/50 bg-surface/30 p-6 backdrop-blur-sm transition-all duration-300 hover:border-foreground/15 hover:bg-surface/50"
               >
                 <div className="mb-4 flex items-center gap-3">
-                  <div className="flex h-9 w-9 items-center justify-center rounded-md bg-golden/10 text-golden">
+                  <div className="flex h-9 w-9 items-center justify-center rounded-md bg-foreground/[0.06] text-foreground/70">
                     {ICON_MAP[tool.icon]}
                   </div>
-                  <span className="inline-flex items-center gap-1.5 rounded-full bg-green-500/10 px-2 py-0.5 text-[10px] font-medium uppercase tracking-wider text-green-400">
-                    <span className="h-1 w-1 rounded-full bg-green-400" />
+                  <span className="inline-flex items-center gap-1.5 rounded-full bg-foreground/[0.06] px-2 py-0.5 text-[10px] font-medium uppercase tracking-wider text-foreground/50">
+                    <span className="h-1 w-1 rounded-full bg-foreground/40" />
                     Live
                   </span>
                 </div>
 
-                <h3 className="font-display text-lg font-semibold text-foreground transition-colors group-hover:text-golden">
+                <h3 className="font-display text-lg font-semibold text-foreground transition-colors group-hover:text-foreground/80">
                   {tool.name}
                 </h3>
                 <p className="mt-1 text-sm text-muted-foreground">
                   {tool.tagline}
                 </p>
 
-                <div className="absolute bottom-0 left-0 h-px w-full bg-gradient-to-r from-transparent via-golden/20 to-transparent opacity-0 transition-opacity group-hover:opacity-100" />
+                <div className="absolute bottom-0 left-0 h-px w-full bg-gradient-to-r from-transparent via-foreground/10 to-transparent opacity-0 transition-opacity group-hover:opacity-100" />
               </Link>
             </motion.div>
           ))}
@@ -96,7 +96,7 @@ export function ToolsSection() {
           <div className="mt-8 text-center">
             <Link
               href="/tools"
-              className="inline-flex items-center gap-2 text-sm font-medium text-golden transition-colors hover:text-golden/80"
+              className="inline-flex items-center gap-2 text-sm font-medium text-foreground/70 transition-colors hover:text-foreground"
             >
               View all {TOOLS.length} tools &rarr;
             </Link>

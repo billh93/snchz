@@ -14,23 +14,23 @@ export function ProjectCard({ project }: { project: Project }) {
     <motion.div variants={cardVariants}>
       <Link
         href={`/projects/${project.slug}`}
-        className="group relative block overflow-hidden rounded-lg border border-border/50 bg-surface/50 p-6 backdrop-blur-sm transition-all duration-300 hover:border-golden/30 hover:bg-surface/80"
+        className="group relative block overflow-hidden rounded-lg border border-border/50 bg-surface/50 p-6 backdrop-blur-sm transition-all duration-300 hover:border-foreground/15 hover:bg-surface/80"
       >
         <div className="flex items-start justify-between gap-4">
           <div className="min-w-0 flex-1">
             <div className="mb-1 flex items-center gap-3">
-              <h3 className="font-display text-xl font-semibold text-foreground transition-colors group-hover:text-golden">
+              <h3 className="font-display text-xl font-semibold text-foreground transition-colors group-hover:text-foreground/80">
                 {project.name}
               </h3>
               {project.status === "acquired" && (
-                <span className="inline-flex items-center rounded-full bg-golden/10 px-2.5 py-0.5 text-xs font-medium text-golden">
+                <span className="inline-flex items-center rounded-full bg-foreground/[0.07] px-2.5 py-0.5 text-xs font-medium text-foreground/60">
                   {project.metrics ?? "Acquired"}
                 </span>
               )}
               {project.status === "active" && (
                 <span className="relative flex h-2 w-2">
-                  <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-green-400 opacity-75" />
-                  <span className="relative inline-flex h-2 w-2 rounded-full bg-green-500" />
+                  <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-foreground/40 opacity-75" />
+                  <span className="relative inline-flex h-2 w-2 rounded-full bg-foreground/60" />
                 </span>
               )}
             </div>
@@ -57,7 +57,7 @@ export function ProjectCard({ project }: { project: Project }) {
           )}
         </div>
 
-        <div className="absolute bottom-0 left-0 h-px w-full bg-gradient-to-r from-transparent via-golden/20 to-transparent opacity-0 transition-opacity group-hover:opacity-100" />
+        <div className="absolute bottom-0 left-0 h-px w-full bg-gradient-to-r from-transparent via-foreground/10 to-transparent opacity-0 transition-opacity group-hover:opacity-100" />
       </Link>
     </motion.div>
   );

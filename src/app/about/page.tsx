@@ -5,9 +5,9 @@ import { FadeIn } from "@/components/motion";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "About",
+  title: "About Bill Hinostroza — Product Engineer, 5 SaaS Exits",
   description:
-    "Serial builder, product engineer, and full-stack developer with 5 exits.",
+    "Bill Hinostroza is a full-stack product engineer with 5 SaaS acquisitions. TypeScript, Python, React, Next.js, FastAPI, AI/ML. Currently seeking product engineer roles.",
 };
 
 export default function AboutPage() {
@@ -18,7 +18,7 @@ export default function AboutPage() {
       <main className="pt-32 pb-20 px-6 lg:px-8">
         <div className="mx-auto max-w-3xl">
           <FadeIn>
-            <p className="mb-2 font-mono text-xs uppercase tracking-widest text-golden">
+            <p className="mb-2 font-mono text-xs uppercase tracking-widest text-foreground/50">
               About
             </p>
             <h1 className="font-display text-4xl font-bold tracking-tight text-foreground sm:text-5xl">
@@ -60,7 +60,7 @@ export default function AboutPage() {
               <div className="grid grid-cols-2 gap-8 sm:grid-cols-4">
                 {STACK_CATEGORIES.map((category) => (
                   <div key={category.label}>
-                    <h3 className="mb-3 text-sm font-medium text-golden/80">
+                    <h3 className="mb-3 text-sm font-medium text-foreground/60">
                       {category.label}
                     </h3>
                     <ul className="space-y-1.5">
@@ -87,7 +87,7 @@ export default function AboutPage() {
               <div className="flex flex-wrap gap-6">
                 <a
                   href={`mailto:${SITE.email}`}
-                  className="text-sm text-foreground transition-colors hover:text-golden"
+                  className="text-sm text-foreground transition-colors hover:text-foreground/70"
                 >
                   {SITE.email}
                 </a>
@@ -95,7 +95,7 @@ export default function AboutPage() {
                   href={SITE.github}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-sm text-foreground transition-colors hover:text-golden"
+                  className="text-sm text-foreground transition-colors hover:text-foreground/70"
                 >
                   GitHub
                 </a>
@@ -103,13 +103,23 @@ export default function AboutPage() {
                   href={SITE.linkedin}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-sm text-foreground transition-colors hover:text-golden"
+                  className="text-sm text-foreground transition-colors hover:text-foreground/70"
                 >
                   LinkedIn
                 </a>
               </div>
             </div>
           </FadeIn>
+
+          {/* Hidden sigil for the curious */}
+          <div aria-hidden="true" className="mt-20 flex justify-center">
+            <span
+              className="font-mono text-[7px] tracking-[0.6em] text-muted-foreground/[0.06] transition-all duration-1000 hover:text-muted-foreground/25 cursor-default select-none"
+              title="Fiat Lux"
+            >
+              VISITA INTERIORA TERRAE
+            </span>
+          </div>
         </div>
       </main>
     </>

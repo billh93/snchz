@@ -19,7 +19,7 @@ const LIMITS = {
 };
 
 const INPUT_CLASS =
-  "w-full rounded-lg border border-border/50 bg-background/50 px-3 py-2.5 text-sm text-foreground transition-colors placeholder:text-muted-foreground/40 focus:border-golden/40 focus:outline-none focus:ring-1 focus:ring-golden/20";
+  "w-full rounded-lg border border-border/50 bg-background/50 px-3 py-2.5 text-sm text-foreground transition-colors placeholder:text-muted-foreground/40 focus:border-foreground/20 focus:outline-none focus:ring-1 focus:ring-foreground/10";
 
 function extractDomain(url: string): string {
   try {
@@ -80,7 +80,7 @@ export function OgPreview() {
             <div>
               <div className="mb-1.5 flex items-center justify-between">
                 <label className="text-sm font-medium text-foreground/80">
-                  Title <span className="text-golden/70">*</span>
+                  Title <span className="text-foreground/55">*</span>
                 </label>
                 <span
                   className={cn(
@@ -167,7 +167,7 @@ export function OgPreview() {
             <button
               onClick={handleCopy}
               disabled={!title}
-              className="flex items-center gap-1.5 rounded-md border border-border/40 px-2.5 py-1 text-xs font-medium text-foreground transition-colors hover:border-golden/30 hover:text-golden disabled:opacity-40"
+              className="flex items-center gap-1.5 rounded-md border border-border/40 px-2.5 py-1 text-xs font-medium text-foreground transition-colors hover:border-foreground/15 hover:text-foreground disabled:opacity-40"
             >
               {copied ? <Check className="h-3 w-3" /> : <Copy className="h-3 w-3" />}
               {copied ? "Copied!" : "Copy"}
@@ -209,7 +209,7 @@ export function OgPreview() {
                   className={cn(
                     "flex-1 rounded-md px-3 py-1.5 text-xs font-medium transition-colors",
                     platform === p.value
-                      ? "bg-golden/15 text-golden"
+                      ? "bg-foreground/[0.08] text-foreground/80"
                       : "text-muted-foreground hover:text-foreground"
                   )}
                 >

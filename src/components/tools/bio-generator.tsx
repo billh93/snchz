@@ -31,7 +31,7 @@ type Generation = {
 };
 
 const inputClass =
-  "w-full rounded-lg border border-border/50 bg-background/50 px-3 py-2.5 text-sm text-foreground transition-colors placeholder:text-muted-foreground/40 focus:border-golden/40 focus:outline-none focus:ring-1 focus:ring-golden/20";
+  "w-full rounded-lg border border-border/50 bg-background/50 px-3 py-2.5 text-sm text-foreground transition-colors placeholder:text-muted-foreground/40 focus:border-foreground/20 focus:outline-none focus:ring-1 focus:ring-foreground/10";
 
 export function BioGenerator() {
   const [name, setName] = useState("");
@@ -178,8 +178,8 @@ export function BioGenerator() {
                     className={cn(
                       "rounded-md border px-3 py-1.5 text-xs font-medium capitalize transition-colors",
                       tone === t
-                        ? "border-golden/40 bg-golden/10 text-golden"
-                        : "border-border/50 text-muted-foreground hover:border-golden/30 hover:text-foreground"
+                        ? "border-foreground/20 bg-foreground/[0.06] text-foreground/80"
+                        : "border-border/50 text-muted-foreground hover:border-foreground/15 hover:text-foreground"
                     )}
                   >
                     {t}
@@ -200,8 +200,8 @@ export function BioGenerator() {
                     className={cn(
                       "rounded-md border px-3 py-1.5 text-xs font-medium transition-colors",
                       platform === key
-                        ? "border-golden/40 bg-golden/10 text-golden"
-                        : "border-border/50 text-muted-foreground hover:border-golden/30 hover:text-foreground"
+                        ? "border-foreground/20 bg-foreground/[0.06] text-foreground/80"
+                        : "border-border/50 text-muted-foreground hover:border-foreground/15 hover:text-foreground"
                     )}
                   >
                     {label}
@@ -220,7 +220,7 @@ export function BioGenerator() {
             <button
               onClick={generate}
               disabled={!name.trim() || !role.trim() || loading}
-              className="flex flex-1 items-center justify-center gap-2 rounded-lg bg-golden px-4 py-2.5 text-sm font-semibold text-golden-foreground transition-all hover:brightness-110 active:scale-[0.98] disabled:opacity-40"
+              className="flex flex-1 items-center justify-center gap-2 rounded-lg bg-foreground px-4 py-2.5 text-sm font-semibold text-background transition-all hover:brightness-110 active:scale-[0.98] disabled:opacity-40"
             >
               {loading ? (
                 <Loader2 className="h-4 w-4 animate-spin" />
@@ -233,7 +233,7 @@ export function BioGenerator() {
               <button
                 onClick={generate}
                 disabled={loading}
-                className="flex items-center justify-center rounded-lg border border-border/60 bg-surface/30 px-3 py-2.5 text-muted-foreground transition-all hover:border-golden/30 hover:text-foreground disabled:opacity-40"
+                className="flex items-center justify-center rounded-lg border border-border/60 bg-surface/30 px-3 py-2.5 text-muted-foreground transition-all hover:border-foreground/15 hover:text-foreground disabled:opacity-40"
               >
                 <RefreshCw className="h-4 w-4" />
               </button>
@@ -279,7 +279,7 @@ export function BioGenerator() {
               >
                 <div className="mb-3 flex items-center justify-between">
                   <div className="flex items-center gap-2">
-                    <span className="rounded-md bg-golden/10 px-2 py-0.5 text-[10px] font-medium text-golden">
+                    <span className="rounded-md bg-foreground/[0.06] px-2 py-0.5 text-[10px] font-medium text-foreground/80">
                       {PLATFORMS[platform]?.label}
                     </span>
                     <span className="text-[10px] capitalize text-muted-foreground/50">
@@ -303,7 +303,7 @@ export function BioGenerator() {
 
                 {loading && !output ? (
                   <div className="flex h-24 items-center justify-center">
-                    <Loader2 className="h-5 w-5 animate-spin text-golden/60" />
+                    <Loader2 className="h-5 w-5 animate-spin text-foreground/40" />
                   </div>
                 ) : (
                   <p className="whitespace-pre-wrap rounded-lg bg-background/30 p-4 text-sm leading-relaxed text-foreground/90">
@@ -358,7 +358,7 @@ export function BioGenerator() {
                       className="rounded-lg border border-border/30 bg-surface/20 p-3"
                     >
                       <div className="mb-1.5 flex items-center gap-2">
-                        <span className="rounded bg-golden/10 px-1.5 py-0.5 text-[9px] text-golden">
+                        <span className="rounded bg-foreground/[0.06] px-1.5 py-0.5 text-[9px] text-foreground/80">
                           {PLATFORMS[gen.platform]?.label}
                         </span>
                         <span className="text-[9px] capitalize text-muted-foreground/40">
@@ -376,7 +376,7 @@ export function BioGenerator() {
                       </p>
                       <button
                         onClick={() => setOutput(gen.text)}
-                        className="mt-1.5 text-[10px] text-golden/60 transition-colors hover:text-golden"
+                        className="mt-1.5 text-[10px] text-foreground/40 transition-colors hover:text-foreground"
                       >
                         Use this
                       </button>

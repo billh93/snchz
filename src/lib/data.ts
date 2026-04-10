@@ -1,6 +1,6 @@
 export const SITE = {
   name: "SNCHZ",
-  title: "Bill Sanchez",
+  title: "Bill Hinostroza",
   role: "Product Engineer",
   tagline: "Building products end to end, from idea to launch.",
   description:

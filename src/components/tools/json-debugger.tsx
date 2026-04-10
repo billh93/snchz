@@ -225,7 +225,7 @@ function JsonTreeNode({
     <div className="font-mono text-xs">
       <button
         onClick={() => setExpanded(!expanded)}
-        className="flex items-center gap-1 py-px transition-colors hover:text-golden"
+        className="flex items-center gap-1 py-px transition-colors hover:text-foreground"
       >
         {expanded ? (
           <ChevronDown className="h-3 w-3 shrink-0 text-muted-foreground" />
@@ -278,7 +278,7 @@ const CRON_PRESETS = [
 ];
 
 const inputClass =
-  "w-full rounded-lg border border-border/50 bg-background/50 px-3 py-2.5 text-sm text-foreground transition-colors placeholder:text-muted-foreground/40 focus:border-golden/40 focus:outline-none focus:ring-1 focus:ring-golden/20";
+  "w-full rounded-lg border border-border/50 bg-background/50 px-3 py-2.5 text-sm text-foreground transition-colors placeholder:text-muted-foreground/40 focus:border-foreground/20 focus:outline-none focus:ring-1 focus:ring-foreground/10";
 
 export function JsonDebugger() {
   const [activeTab, setActiveTab] = useState<Tab>("json");
@@ -414,7 +414,7 @@ export function JsonDebugger() {
             className={cn(
               "flex items-center gap-2 rounded-md px-4 py-2 text-sm font-medium transition-colors",
               activeTab === tab.id
-                ? "bg-golden/10 text-golden"
+                ? "bg-foreground/[0.06] text-foreground/80"
                 : "text-muted-foreground hover:text-foreground"
             )}
           >
@@ -451,7 +451,7 @@ export function JsonDebugger() {
                     <button
                       onClick={handleFormat}
                       disabled={!jsonInput.trim()}
-                      className="flex items-center gap-1.5 rounded-lg border border-border/60 bg-surface/30 px-3 py-1.5 text-xs font-medium text-muted-foreground transition-all hover:border-golden/30 hover:text-foreground disabled:opacity-40"
+                      className="flex items-center gap-1.5 rounded-lg border border-border/60 bg-surface/30 px-3 py-1.5 text-xs font-medium text-muted-foreground transition-all hover:border-foreground/15 hover:text-foreground disabled:opacity-40"
                     >
                       <AlignLeft className="h-3.5 w-3.5" />
                       Format
@@ -459,7 +459,7 @@ export function JsonDebugger() {
                     <button
                       onClick={handleMinify}
                       disabled={!jsonInput.trim()}
-                      className="flex items-center gap-1.5 rounded-lg border border-border/60 bg-surface/30 px-3 py-1.5 text-xs font-medium text-muted-foreground transition-all hover:border-golden/30 hover:text-foreground disabled:opacity-40"
+                      className="flex items-center gap-1.5 rounded-lg border border-border/60 bg-surface/30 px-3 py-1.5 text-xs font-medium text-muted-foreground transition-all hover:border-foreground/15 hover:text-foreground disabled:opacity-40"
                     >
                       <Minimize2 className="h-3.5 w-3.5" />
                       Minify
@@ -467,7 +467,7 @@ export function JsonDebugger() {
                     <button
                       onClick={handleValidate}
                       disabled={!jsonInput.trim()}
-                      className="flex items-center gap-1.5 rounded-lg border border-border/60 bg-surface/30 px-3 py-1.5 text-xs font-medium text-muted-foreground transition-all hover:border-golden/30 hover:text-foreground disabled:opacity-40"
+                      className="flex items-center gap-1.5 rounded-lg border border-border/60 bg-surface/30 px-3 py-1.5 text-xs font-medium text-muted-foreground transition-all hover:border-foreground/15 hover:text-foreground disabled:opacity-40"
                     >
                       <CircleCheck className="h-3.5 w-3.5" />
                       Validate
@@ -478,8 +478,8 @@ export function JsonDebugger() {
                       className={cn(
                         "flex items-center gap-1.5 rounded-lg border px-3 py-1.5 text-xs font-medium transition-all disabled:opacity-40",
                         showTree
-                          ? "border-golden/40 bg-golden/10 text-golden"
-                          : "border-border/60 bg-surface/30 text-muted-foreground hover:border-golden/30 hover:text-foreground"
+                          ? "border-foreground/20 bg-foreground/[0.06] text-foreground/80"
+                          : "border-border/60 bg-surface/30 text-muted-foreground hover:border-foreground/15 hover:text-foreground"
                       )}
                     >
                       <ListTree className="h-3.5 w-3.5" />
@@ -581,11 +581,11 @@ export function JsonDebugger() {
                     </div>
 
                     <div className="space-y-2">
-                      <h3 className="flex items-center gap-2 text-sm font-semibold text-golden">
-                        <span className="h-2 w-2 rounded-full bg-golden" />
+                      <h3 className="flex items-center gap-2 text-sm font-semibold text-foreground/80">
+                        <span className="h-2 w-2 rounded-full bg-foreground" />
                         Payload
                       </h3>
-                      <pre className="rounded-lg border border-golden/10 bg-golden/5 p-4 font-mono text-xs leading-relaxed text-foreground/90">
+                      <pre className="rounded-lg border border-foreground/10 bg-foreground/[0.04] p-4 font-mono text-xs leading-relaxed text-foreground/90">
                         {JSON.stringify(jwtDecoded.payload, null, 2)}
                       </pre>
                       {(() => {
@@ -680,8 +680,8 @@ export function JsonDebugger() {
                         className={cn(
                           "rounded-md border px-2.5 py-1 text-xs transition-colors",
                           cronInput === p.value
-                            ? "border-golden/40 bg-golden/10 text-golden"
-                            : "border-border/50 text-muted-foreground hover:border-golden/30 hover:text-foreground"
+                            ? "border-foreground/20 bg-foreground/[0.06] text-foreground/80"
+                            : "border-border/50 text-muted-foreground hover:border-foreground/15 hover:text-foreground"
                         )}
                       >
                         {p.label}
@@ -697,8 +697,8 @@ export function JsonDebugger() {
                   </div>
                 ) : cronResult ? (
                   <div className="space-y-4">
-                    <div className="rounded-lg border border-golden/10 bg-golden/5 px-4 py-3">
-                      <p className="text-sm font-medium text-golden">
+                    <div className="rounded-lg border border-foreground/10 bg-foreground/[0.04] px-4 py-3">
+                      <p className="text-sm font-medium text-foreground/80">
                         {cronResult.description}
                       </p>
                     </div>

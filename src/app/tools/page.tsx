@@ -5,9 +5,9 @@ import { ToolCard } from "@/components/tool-card";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Tools",
+  title: "Free Developer Tools by Bill Hinostroza",
   description:
-    "Free, open-source tools for developers and founders. SaaS calculator, AI prompt lab, status page generator, and more.",
+    "13 free tools for developers and founders: SaaS calculator, AI prompt lab, QR code generator, invoice builder, and more. No sign-up required.",
 };
 
 export default function ToolsPage() {
@@ -18,7 +18,7 @@ export default function ToolsPage() {
         <div className="mx-auto max-w-7xl">
           <FadeIn>
             <div className="mb-16">
-              <p className="mb-2 font-mono text-xs uppercase tracking-widest text-golden">
+              <p className="mb-2 font-mono text-xs uppercase tracking-widest text-foreground/50">
                 Free Tools
               </p>
               <h1 className="font-display text-4xl font-bold tracking-tight text-foreground sm:text-5xl">

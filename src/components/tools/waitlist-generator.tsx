@@ -14,7 +14,7 @@ const BG_OPTIONS: { value: BgStyle; label: string }[] = [
 ];
 
 const INPUT_CLASS =
-  "w-full rounded-lg border border-border/50 bg-background/50 px-3 py-2.5 text-sm text-foreground transition-colors placeholder:text-muted-foreground/40 focus:border-golden/40 focus:outline-none focus:ring-1 focus:ring-golden/20";
+  "w-full rounded-lg border border-border/50 bg-background/50 px-3 py-2.5 text-sm text-foreground transition-colors placeholder:text-muted-foreground/40 focus:border-foreground/20 focus:outline-none focus:ring-1 focus:ring-foreground/10";
 
 function generateWaitlistHTML(config: {
   productName: string;
@@ -241,7 +241,7 @@ export function WaitlistGenerator() {
                 className={cn(
                   "flex-1 rounded-lg border px-3 py-2 text-xs font-medium transition-all",
                   bgStyle === opt.value
-                    ? "border-golden/50 bg-golden/5 text-foreground"
+                    ? "border-foreground/20 bg-foreground/[0.04] text-foreground"
                     : "border-border/40 text-muted-foreground hover:border-border"
                 )}
               >
@@ -269,7 +269,7 @@ export function WaitlistGenerator() {
         <div className="flex gap-3">
           <button
             onClick={handleDownload}
-            className="flex flex-1 items-center justify-center gap-2 rounded-lg bg-golden px-4 py-2.5 text-sm font-medium text-background transition-opacity hover:opacity-90"
+            className="flex flex-1 items-center justify-center gap-2 rounded-lg bg-foreground px-4 py-2.5 text-sm font-medium text-background transition-opacity hover:opacity-90"
           >
             <Download size={15} />
             Download HTML

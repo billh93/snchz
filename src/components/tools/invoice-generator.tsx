@@ -161,7 +161,7 @@ function buildPrintHtml(
 }
 
 const inputClass =
-  "w-full rounded-lg border border-border/50 bg-background/50 px-3 py-2.5 text-sm text-foreground transition-colors placeholder:text-muted-foreground/40 focus:border-golden/40 focus:outline-none focus:ring-1 focus:ring-golden/20";
+  "w-full rounded-lg border border-border/50 bg-background/50 px-3 py-2.5 text-sm text-foreground transition-colors placeholder:text-muted-foreground/40 focus:border-foreground/20 focus:outline-none focus:ring-1 focus:ring-foreground/10";
 
 export function InvoiceGenerator() {
   const [from, setFrom] = useState<ContactInfo>({ name: "", email: "", address: "" });
@@ -363,7 +363,7 @@ export function InvoiceGenerator() {
           <h3 className="text-sm font-semibold text-foreground">Line Items</h3>
           <button
             onClick={addItem}
-            className="flex items-center gap-1.5 rounded-lg border border-border/60 bg-surface/30 px-3 py-1.5 text-xs font-medium text-muted-foreground transition-all hover:border-golden/30 hover:text-foreground"
+            className="flex items-center gap-1.5 rounded-lg border border-border/60 bg-surface/30 px-3 py-1.5 text-xs font-medium text-muted-foreground transition-all hover:border-foreground/15 hover:text-foreground"
           >
             <Plus className="h-3.5 w-3.5" />
             Add Item
@@ -445,7 +445,7 @@ export function InvoiceGenerator() {
                   step={0.5}
                   value={taxRate}
                   onChange={(e) => setTaxRate(Math.max(0, parseFloat(e.target.value) || 0))}
-                  className="w-16 rounded border border-border/50 bg-background/50 px-2 py-1 text-center text-xs text-foreground focus:border-golden/40 focus:outline-none"
+                  className="w-16 rounded border border-border/50 bg-background/50 px-2 py-1 text-center text-xs text-foreground focus:border-foreground/20 focus:outline-none"
                 />
                 <span className="text-xs">%</span>
               </span>
@@ -454,7 +454,7 @@ export function InvoiceGenerator() {
             <div className="border-t border-border/50 pt-2">
               <div className="flex justify-between text-base font-semibold text-foreground">
                 <span>Total</span>
-                <span className="font-mono text-golden">{formatCurrency(total, currency)}</span>
+                <span className="font-mono text-foreground/80">{formatCurrency(total, currency)}</span>
               </div>
             </div>
           </div>
@@ -485,7 +485,7 @@ export function InvoiceGenerator() {
       <div className="flex justify-end">
         <button
           onClick={handleGenerate}
-          className="flex items-center gap-2 rounded-lg bg-golden px-6 py-2.5 text-sm font-semibold text-golden-foreground transition-all hover:brightness-110 active:scale-[0.98]"
+          className="flex items-center gap-2 rounded-lg bg-foreground px-6 py-2.5 text-sm font-semibold text-background transition-all hover:brightness-110 active:scale-[0.98]"
         >
           <Printer className="h-4 w-4" />
           Generate PDF

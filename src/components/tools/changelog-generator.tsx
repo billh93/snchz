@@ -32,7 +32,7 @@ function uid() {
 }
 
 const INPUT_CLASS =
-  "w-full rounded-lg border border-border/50 bg-background/50 px-3 py-2.5 text-sm text-foreground transition-colors placeholder:text-muted-foreground/40 focus:border-golden/40 focus:outline-none focus:ring-1 focus:ring-golden/20";
+  "w-full rounded-lg border border-border/50 bg-background/50 px-3 py-2.5 text-sm text-foreground transition-colors placeholder:text-muted-foreground/40 focus:border-foreground/20 focus:outline-none focus:ring-1 focus:ring-foreground/10";
 
 function todayStr() {
   return new Date().toISOString().slice(0, 10);
@@ -208,7 +208,7 @@ export function ChangelogGenerator() {
         <div className="flex items-center justify-between">
           <button
             onClick={addVersion}
-            className="flex items-center gap-2 rounded-lg border border-dashed border-golden/30 px-3.5 py-2 text-sm font-medium text-golden transition-colors hover:bg-golden/5"
+            className="flex items-center gap-2 rounded-lg border border-dashed border-foreground/15 px-3.5 py-2 text-sm font-medium text-foreground/80 transition-colors hover:bg-foreground/90/5"
           >
             <Plus size={14} />
             Add Version
@@ -298,7 +298,7 @@ export function ChangelogGenerator() {
 
               <button
                 onClick={() => addEntry(v.id)}
-                className="mt-3 flex w-full items-center justify-center gap-2 rounded-lg border border-dashed border-border/40 py-2 text-xs text-muted-foreground transition-colors hover:border-golden/30 hover:text-foreground"
+                className="mt-3 flex w-full items-center justify-center gap-2 rounded-lg border border-dashed border-border/40 py-2 text-xs text-muted-foreground transition-colors hover:border-foreground/15 hover:text-foreground"
               >
                 <Plus size={12} />
                 Add Entry
@@ -311,7 +311,7 @@ export function ChangelogGenerator() {
         <div className="flex flex-wrap gap-3">
           <button
             onClick={handleDownload}
-            className="flex flex-1 items-center justify-center gap-2 rounded-lg bg-golden px-4 py-2.5 text-sm font-medium text-background transition-opacity hover:opacity-90"
+            className="flex flex-1 items-center justify-center gap-2 rounded-lg bg-foreground px-4 py-2.5 text-sm font-medium text-background transition-opacity hover:opacity-90"
           >
             <Download size={15} />
             Download HTML

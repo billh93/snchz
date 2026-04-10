@@ -21,7 +21,7 @@ const SIZES = [256, 512, 1024] as const;
 const ERROR_LEVELS: ErrorLevel[] = ["L", "M", "Q", "H"];
 
 const INPUT_CLASS =
-  "w-full rounded-lg border border-border/50 bg-background/50 px-3 py-2.5 text-sm text-foreground transition-colors placeholder:text-muted-foreground/40 focus:border-golden/40 focus:outline-none focus:ring-1 focus:ring-golden/20";
+  "w-full rounded-lg border border-border/50 bg-background/50 px-3 py-2.5 text-sm text-foreground transition-colors placeholder:text-muted-foreground/40 focus:border-foreground/20 focus:outline-none focus:ring-1 focus:ring-foreground/10";
 
 function buildQrData(
   type: QrType,
@@ -117,7 +117,7 @@ export function QrGenerator() {
                 className={cn(
                   "flex-1 rounded-md px-3 py-1.5 text-xs font-medium transition-colors",
                   type === t.value
-                    ? "bg-golden/15 text-golden"
+                    ? "bg-foreground/[0.08] text-foreground/80"
                     : "text-muted-foreground hover:text-foreground"
                 )}
               >
@@ -185,7 +185,7 @@ export function QrGenerator() {
                         className={cn(
                           "flex-1 rounded-md px-3 py-1.5 text-xs font-medium transition-colors",
                           wifi.encryption === enc
-                            ? "bg-golden/15 text-golden"
+                            ? "bg-foreground/[0.08] text-foreground/80"
                             : "text-muted-foreground hover:text-foreground"
                         )}
                       >
@@ -274,7 +274,7 @@ export function QrGenerator() {
                     className={cn(
                       "flex-1 rounded-md px-3 py-1.5 text-xs font-medium transition-colors",
                       size === s
-                        ? "bg-golden/15 text-golden"
+                        ? "bg-foreground/[0.08] text-foreground/80"
                         : "text-muted-foreground hover:text-foreground"
                     )}
                   >
@@ -294,7 +294,7 @@ export function QrGenerator() {
                     className={cn(
                       "flex-1 rounded-md px-3 py-1.5 text-xs font-medium transition-colors",
                       errorLevel === l
-                        ? "bg-golden/15 text-golden"
+                        ? "bg-foreground/[0.08] text-foreground/80"
                         : "text-muted-foreground hover:text-foreground"
                     )}
                   >
@@ -342,14 +342,14 @@ export function QrGenerator() {
             <div className="flex gap-3">
               <button
                 onClick={handleDownload}
-                className="flex flex-1 items-center justify-center gap-2 rounded-lg bg-golden/90 px-4 py-2.5 text-sm font-medium text-background transition-colors hover:bg-golden"
+                className="flex flex-1 items-center justify-center gap-2 rounded-lg bg-foreground/90 px-4 py-2.5 text-sm font-medium text-background transition-colors hover:bg-foreground/90"
               >
                 <Download className="h-4 w-4" />
                 Download PNG
               </button>
               <button
                 onClick={handleCopySvg}
-                className="flex flex-1 items-center justify-center gap-2 rounded-lg border border-border/50 bg-surface/30 px-4 py-2.5 text-sm font-medium text-foreground transition-colors hover:border-golden/30 hover:text-golden"
+                className="flex flex-1 items-center justify-center gap-2 rounded-lg border border-border/50 bg-surface/30 px-4 py-2.5 text-sm font-medium text-foreground transition-colors hover:border-foreground/15 hover:text-foreground"
               >
                 {copied ? <Check className="h-4 w-4" /> : <Copy className="h-4 w-4" />}
                 {copied ? "Copied SVG" : "Copy SVG"}

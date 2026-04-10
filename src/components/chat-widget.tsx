@@ -53,7 +53,7 @@ export function ChatWidget() {
       <motion.button
         onClick={() => setOpen(true)}
         className={cn(
-          "fixed bottom-6 right-6 z-50 flex items-center gap-2 rounded-full bg-golden px-4 py-3 text-sm font-medium text-golden-foreground shadow-lg transition-all hover:brightness-110",
+          "fixed bottom-6 right-6 z-50 flex items-center gap-2 rounded-full bg-foreground px-4 py-3 text-sm font-medium text-background shadow-lg transition-all hover:brightness-110",
           open && "pointer-events-none opacity-0"
         )}
         initial={{ opacity: 0, scale: 0.8 }}
@@ -73,7 +73,7 @@ export function ChatWidget() {
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 20, scale: 0.95 }}
             transition={{ type: "spring", stiffness: 200, damping: 25 }}
-            className="fixed bottom-6 right-6 z-50 flex h-[480px] w-[380px] max-w-[calc(100vw-3rem)] flex-col overflow-hidden rounded-xl border border-border/50 bg-[oklch(0.15_0.02_275)] shadow-2xl"
+            className="fixed bottom-6 right-6 z-50 flex h-[480px] w-[380px] max-w-[calc(100vw-3rem)] flex-col overflow-hidden rounded-xl border border-border/50 bg-[oklch(0.10_0_0)] shadow-2xl"
           >
             {/* Header */}
             <div className="flex items-center justify-between border-b border-border/30 px-4 py-3">
@@ -110,7 +110,7 @@ export function ChatWidget() {
                       <button
                         key={s}
                         onClick={() => handleSuggestion(s)}
-                        className="rounded-md border border-border/50 bg-surface/30 px-3 py-1.5 text-xs text-foreground/80 transition-colors hover:border-golden/30 hover:text-golden"
+                        className="rounded-md border border-border/50 bg-surface/30 px-3 py-1.5 text-xs text-foreground/80 transition-colors hover:border-foreground/15 hover:text-foreground"
                       >
                         {s}
                       </button>
@@ -125,12 +125,12 @@ export function ChatWidget() {
                   className={cn(
                     "text-sm leading-relaxed",
                     m.role === "user"
-                      ? "ml-8 rounded-lg bg-golden/10 px-3 py-2 text-foreground"
+                      ? "ml-8 rounded-lg bg-foreground/[0.06] px-3 py-2 text-foreground"
                       : "text-foreground/85"
                   )}
                 >
                   {m.role === "assistant" && (
-                    <span className="mb-1 block text-[10px] font-medium uppercase tracking-wider text-golden/60">
+                    <span className="mb-1 block text-[10px] font-medium uppercase tracking-wider text-foreground/40">
                       AI
                     </span>
                   )}
@@ -170,7 +170,7 @@ export function ChatWidget() {
                 <button
                   type="submit"
                   disabled={!input.trim() || isLoading}
-                  className="flex h-8 w-8 items-center justify-center rounded-md bg-golden text-golden-foreground transition-all hover:brightness-110 disabled:opacity-30"
+                  className="flex h-8 w-8 items-center justify-center rounded-md bg-foreground text-background transition-all hover:brightness-110 disabled:opacity-30"
                   aria-label="Send message"
                 >
                   <Send className="h-3.5 w-3.5" />

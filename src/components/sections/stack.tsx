@@ -11,12 +11,15 @@ const itemVariants = {
 
 export function StackSection() {
   return (
-    <section className="relative py-32 px-6 lg:px-8">
+    <section
+      className="relative py-32 px-6 lg:px-8"
+      data-arcanum="the tools shape the maker"
+    >
       <div className="mx-auto max-w-7xl">
         <div className="grid gap-16 lg:grid-cols-[1fr_1.2fr] lg:gap-24">
           <FadeIn>
             <div>
-              <p className="mb-2 font-mono text-xs uppercase tracking-widest text-golden">
+              <p className="mb-2 font-mono text-xs uppercase tracking-widest text-foreground/50">
                 How I Build
               </p>
               <h2 className="font-display text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
@@ -32,9 +35,9 @@ export function StackSection() {
                 don&apos;t ship.
               </p>
               <div className="mt-8 flex items-center gap-3">
-                <div className="h-px flex-1 bg-gradient-to-r from-golden/30 to-transparent" />
-                <span className="font-mono text-xs text-golden/60">
-                  2019 → now
+                <div className="h-px flex-1 bg-gradient-to-r from-foreground/20 to-transparent" />
+                <span className="font-mono text-xs text-foreground/30">
+                  2019 &rarr; now
                 </span>
               </div>
             </div>
