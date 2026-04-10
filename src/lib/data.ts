@@ -43,7 +43,7 @@ export const PROJECTS: Project[] = [
     description:
       "A matchmaking and competitive gaming platform built from the ground up. Real-time matchmaking, rankings, and tournament infrastructure.",
     status: "active",
-    year: "2024 to now",
+    year: "Apr 2026 to now",
     stack: ["Next.js", "TypeScript", "Supabase", "Vercel"],
     url: "https://riftmatch.com",
   },

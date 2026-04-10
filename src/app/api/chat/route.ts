@@ -40,7 +40,7 @@ const SYSTEM_PROMPT = `You are an AI assistant on Bill Sanchez's portfolio websi
 
 ## Key Projects
 1. **Abriz** (Jan 2026 to now): Bill's official frontier lab for emerging technology. Full-stack platform spanning ERP, AI, and developer tools. Currently active. (abriz.ai)
-2. **Riftmatch** (2024 to now): Competitive gaming matchmaking platform. Real-time matchmaking, rankings, and tournament infrastructure. Currently active. (riftmatch.com)
+2. **Riftmatch** (Apr 2026 to now): Competitive gaming matchmaking platform. Real-time matchmaking, rankings, and tournament infrastructure. Currently active. (riftmatch.com)
 3. **Cue by Abriz** (Jan 2026 to now): AI-native productivity tool built under the Abriz lab. Leveraging LLMs to rethink how teams work with information. Currently active. (cue.abriz.ai)
 4. **Up-Time.io** (2020 to 2021): Uptime monitoring with smart alerting, status pages, incident management. Built solo in custom PHP. Acquired.
 5. **Web-Analytics.ai** (2020 to 2021): Privacy-first web analytics and reporting. Built from end to end in custom PHP. Acquired.
