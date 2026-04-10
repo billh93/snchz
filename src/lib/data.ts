@@ -106,6 +106,16 @@ export type Tool = {
 
 export const TOOLS: Tool[] = [
   {
+    slug: "qr-generator",
+    name: "QR Code Generator",
+    tagline: "Generate QR codes for URLs, WiFi, email, and text",
+    description:
+      "Create customizable QR codes with custom colors and sizes. Download as PNG instantly.",
+    status: "live",
+    icon: "qr-code",
+    href: "/tools/qr-generator",
+  },
+  {
     slug: "saas-calculator",
     name: "SaaS Metrics Calculator",
     tagline: "MRR, churn, LTV, CAC: calculate it all",
@@ -118,22 +128,112 @@ export const TOOLS: Tool[] = [
   {
     slug: "prompt-lab",
     name: "AI Prompt Lab",
-    tagline: "Test prompts across models, side by side",
+    tagline: "Test prompts with GPT-4o Mini, side by side",
     description:
-      "Write prompts, adjust temperature, and compare GPT-4o Mini outputs across runs in real-time.",
+      "Write prompts, adjust temperature, and compare outputs across runs in real-time.",
     status: "live",
     icon: "sparkles",
     href: "/tools/prompt-lab",
   },
   {
-    slug: "status-page",
-    name: "Status Page Generator",
-    tagline: "Ship a status page in 60 seconds",
+    slug: "bio-generator",
+    name: "AI Bio Generator",
+    tagline: "Generate professional bios for any platform",
     description:
-      "Configure your services, preview the result, and download a self-contained HTML status page.",
+      "AI-powered bios for Twitter, LinkedIn, GitHub. Pick your tone and platform, get polished copy.",
+    status: "live",
+    icon: "user-pen",
+    href: "/tools/bio-generator",
+  },
+  {
+    slug: "og-preview",
+    name: "Social Preview Cards",
+    tagline: "Preview how your links appear on social media",
+    description:
+      "See Twitter, Facebook, and LinkedIn card previews. Get the meta tags you need to copy-paste.",
+    status: "live",
+    icon: "eye",
+    href: "/tools/og-preview",
+  },
+  {
+    slug: "utm-builder",
+    name: "UTM Link Builder",
+    tagline: "Build trackable campaign URLs in seconds",
+    description:
+      "Construct UTM-tagged URLs with presets for Google, Facebook, LinkedIn, and more.",
+    status: "live",
+    icon: "link",
+    href: "/tools/utm-builder",
+  },
+  {
+    slug: "json-debugger",
+    name: "JSON / JWT / Cron Debugger",
+    tagline: "Format, decode, and debug in one place",
+    description:
+      "Pretty-print JSON, decode JWT tokens, and translate cron expressions to plain English.",
+    status: "live",
+    icon: "braces",
+    href: "/tools/json-debugger",
+  },
+  {
+    slug: "invoice-generator",
+    name: "Invoice Generator",
+    tagline: "Create professional invoices, print to PDF",
+    description:
+      "Fill in your details, add line items, and generate a clean invoice ready to send.",
+    status: "live",
+    icon: "file-text",
+    href: "/tools/invoice-generator",
+  },
+  {
+    slug: "link-in-bio",
+    name: "Link in Bio Builder",
+    tagline: "Build your own link page, download the HTML",
+    description:
+      "Configure links, pick a theme, and export a self-contained page you can host anywhere.",
+    status: "live",
+    icon: "layout-list",
+    href: "/tools/link-in-bio",
+  },
+  {
+    slug: "changelog-generator",
+    name: "Changelog Generator",
+    tagline: "Structure release notes, export clean HTML",
+    description:
+      "Add versions and entries by type (added, fixed, changed). Export as HTML or Markdown.",
+    status: "live",
+    icon: "list-ordered",
+    href: "/tools/changelog-generator",
+  },
+  {
+    slug: "waitlist-generator",
+    name: "Waitlist Page Generator",
+    tagline: "Launch a coming-soon page in 60 seconds",
+    description:
+      "Configure your branding, preview the result, and download a ready-to-deploy landing page.",
+    status: "live",
+    icon: "rocket",
+    href: "/tools/waitlist-generator",
+  },
+  {
+    slug: "device-mockup",
+    name: "Device Mockup",
+    tagline: "Frame screenshots in phones, laptops, and browsers",
+    description:
+      "Upload an image and wrap it in an iPhone, MacBook, iPad, or browser frame. Pure CSS rendering.",
+    status: "live",
+    icon: "monitor-smartphone",
+    href: "/tools/device-mockup",
+  },
+  {
+    slug: "uptime-checker",
+    name: "Uptime Checker",
+    tagline: "Spot-check any URL from your browser",
+    description:
+      "Ping a URL, measure response time, and see latency stats. No server needed, runs in your browser.",
     status: "live",
     icon: "activity",
-    href: "/tools/status-page",
+    href: "/tools/uptime-checker",
   },
 ];
 

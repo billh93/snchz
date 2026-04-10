@@ -58,9 +58,20 @@ The portfolio you are on uses Next.js, generative art, an AI chat assistant (you
 - Fast executor: can go from idea to deployed product in days
 
 ## Free Tools (Live on snchz.co)
-- SaaS Metrics Calculator (/tools/saas-calculator): MRR, churn, LTV, CAC calculations with industry benchmarks. Runs entirely in the browser.
-- AI Prompt Lab (/tools/prompt-lab): Test prompts with GPT-4o Mini, adjust temperature, compare outputs across runs.
-- Status Page Generator (/tools/status-page): Configure services, preview the result, download a self-contained HTML status page.
+Bill built 13 free tools on the site. Here are the highlights:
+- QR Code Generator (/tools/qr-generator): URL, WiFi, email, text QR codes with custom colors.
+- SaaS Metrics Calculator (/tools/saas-calculator): MRR, churn, LTV, CAC with industry benchmarks.
+- AI Prompt Lab (/tools/prompt-lab): Test prompts with GPT-4o Mini, compare outputs across runs.
+- AI Bio Generator (/tools/bio-generator): Generate professional bios for Twitter, LinkedIn, GitHub.
+- Social Preview Cards (/tools/og-preview): Preview Open Graph cards for Twitter, Facebook, LinkedIn.
+- UTM Link Builder (/tools/utm-builder): Build campaign-tracked URLs with presets.
+- JSON / JWT / Cron Debugger (/tools/json-debugger): Format JSON, decode JWTs, explain cron expressions.
+- Invoice Generator (/tools/invoice-generator): Create invoices, print to PDF.
+- Link in Bio Builder (/tools/link-in-bio): Build and download a link page.
+- Changelog Generator (/tools/changelog-generator): Structured release notes in HTML or Markdown.
+- Waitlist Page Generator (/tools/waitlist-generator): Coming-soon landing page builder.
+- Device Mockup (/tools/device-mockup): Frame screenshots in device frames.
+- Uptime Checker (/tools/uptime-checker): Browser-side URL latency checks.
 
 ## Target Companies
 Companies like Anthropic, OpenAI, Figma, Linear, Replit, Vercel: teams building tools for developers and creators.

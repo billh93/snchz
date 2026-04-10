@@ -3,19 +3,17 @@ import { Nav } from "@/components/nav";
 import { FadeIn } from "@/components/motion";
 import type { Metadata } from "next";
 
-const StatusPageGenerator = dynamic(() =>
-  import("@/components/tools/status-page-generator").then(
-    (m) => m.StatusPageGenerator
-  )
+const BioGenerator = dynamic(() =>
+  import("@/components/tools/bio-generator").then((m) => m.BioGenerator)
 );
 
 export const metadata: Metadata = {
-  title: "Status Page Generator",
+  title: "AI Bio Generator",
   description:
-    "Generate a beautiful, self-hosted status page in seconds. Configure your services, download a single HTML file, and deploy anywhere.",
+    "Free AI bio generator for Twitter, LinkedIn, and GitHub. Pick your tone and platform, get polished profile copy.",
 };
 
-export default function StatusPageGeneratorPage() {
+export default function BioGeneratorPage() {
   return (
     <>
       <Nav />
@@ -27,17 +25,16 @@ export default function StatusPageGeneratorPage() {
                 Free Tool
               </p>
               <h1 className="font-display text-4xl font-bold tracking-tight text-foreground sm:text-5xl">
-                Status Page Generator
+                AI Bio Generator
               </h1>
               <p className="mt-4 max-w-2xl text-lg text-muted-foreground">
-                Configure your services, preview the result, and download a
-                single HTML file you can host anywhere. Zero dependencies,
-                fully self-contained.
+                Generate professional bios for Twitter, LinkedIn, and GitHub.
+                Pick your tone, enter your details, and get polished copy
+                powered by AI.
               </p>
             </div>
           </FadeIn>
-
-          <StatusPageGenerator />
+          <BioGenerator />
         </div>
       </main>
     </>
