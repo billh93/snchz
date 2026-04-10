@@ -2,7 +2,7 @@
 
 import { useState, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { cn } from "@/lib/utils";
+import { cn, escapeHtml } from "@/lib/utils";
 import {
   Plus,
   Trash2,
@@ -98,7 +98,7 @@ function generateHTML(
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>${displayName || "My Links"}</title>
+<title>${escapeHtml(displayName) || "My Links"}</title>
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 body{${t.bg}${t.text}font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;min-height:100vh;display:flex;align-items:center;justify-content:center;padding:2rem 1rem}
@@ -116,11 +116,11 @@ h1{font-size:1.5rem;font-weight:700;margin-bottom:0.25rem}
 </head>
 <body>
 <div class="container">
-${avatarUrl.trim() ? `<img class="avatar" src="${avatarUrl.trim()}" alt="${displayName}">` : ""}
-<h1>${displayName || "Your Name"}</h1>
-${bio.trim() ? `<p class="bio">${bio}</p>` : ""}
-${links.length > 0 ? `<div class="links">${links.map((l) => `\n<a class="link-card" href="${l.url}" target="_blank" rel="noopener noreferrer">${l.title}</a>`).join("")}\n</div>` : ""}
-${activeSocials.length > 0 ? `<div class="socials">${activeSocials.map((s) => `\n<a href="${socials[s.key]}" target="_blank" rel="noopener noreferrer">${socialSvg(s.key)}</a>`).join("")}\n</div>` : ""}
+${avatarUrl.trim() ? `<img class="avatar" src="${escapeHtml(avatarUrl.trim())}" alt="${escapeHtml(displayName)}">` : ""}
+<h1>${escapeHtml(displayName) || "Your Name"}</h1>
+${bio.trim() ? `<p class="bio">${escapeHtml(bio)}</p>` : ""}
+${links.length > 0 ? `<div class="links">${links.map((l) => `\n<a class="link-card" href="${escapeHtml(l.url)}" target="_blank" rel="noopener noreferrer">${escapeHtml(l.title)}</a>`).join("")}\n</div>` : ""}
+${activeSocials.length > 0 ? `<div class="socials">${activeSocials.map((s) => `\n<a href="${escapeHtml(socials[s.key])}" target="_blank" rel="noopener noreferrer">${socialSvg(s.key)}</a>`).join("")}\n</div>` : ""}
 </div>
 </body>
 </html>`;

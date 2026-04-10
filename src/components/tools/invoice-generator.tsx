@@ -2,7 +2,7 @@
 
 import { useState, useCallback } from "react";
 import { motion } from "framer-motion";
-import { cn } from "@/lib/utils";
+import { cn, escapeHtml } from "@/lib/utils";
 import { Plus, Trash2, Printer, Copy, Check } from "lucide-react";
 
 type LineItem = {
@@ -68,7 +68,7 @@ function buildPrintHtml(
     .map(
       (item) => `
     <tr>
-      <td style="padding:10px 12px;border-bottom:1px solid #e5e7eb;text-align:left">${item.description || "—"}</td>
+      <td style="padding:10px 12px;border-bottom:1px solid #e5e7eb;text-align:left">${escapeHtml(item.description) || "—"}</td>
       <td style="padding:10px 12px;border-bottom:1px solid #e5e7eb;text-align:center">${item.quantity}</td>
       <td style="padding:10px 12px;border-bottom:1px solid #e5e7eb;text-align:right">${fmt(item.unitPrice)}</td>
       <td style="padding:10px 12px;border-bottom:1px solid #e5e7eb;text-align:right">${fmt(item.quantity * item.unitPrice)}</td>
@@ -80,7 +80,7 @@ function buildPrintHtml(
 <html>
 <head>
 <meta charset="utf-8">
-<title>Invoice ${invoiceNumber}</title>
+<title>Invoice ${escapeHtml(invoiceNumber)}</title>
 <style>
   * { margin:0; padding:0; box-sizing:border-box; }
   body { font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif; color:#1a1a1a; background:#fff; }
@@ -98,24 +98,24 @@ function buildPrintHtml(
       <h1 style="font-size:32px;font-weight:700;color:#1a1a1a;letter-spacing:-0.5px">INVOICE</h1>
     </div>
     <div style="text-align:right;font-size:13px;color:#555">
-      <p style="margin-bottom:4px"><strong>Invoice #:</strong> ${invoiceNumber}</p>
-      <p style="margin-bottom:4px"><strong>Date:</strong> ${date}</p>
-      <p><strong>Due:</strong> ${dueDate}</p>
+      <p style="margin-bottom:4px"><strong>Invoice #:</strong> ${escapeHtml(invoiceNumber)}</p>
+      <p style="margin-bottom:4px"><strong>Date:</strong> ${escapeHtml(date)}</p>
+      <p><strong>Due:</strong> ${escapeHtml(dueDate)}</p>
     </div>
   </div>
 
   <div style="display:grid;grid-template-columns:1fr 1fr;gap:40px;margin-bottom:40px">
     <div>
       <p style="font-size:11px;text-transform:uppercase;letter-spacing:1px;color:#999;margin-bottom:8px">From</p>
-      <p style="font-size:14px;font-weight:600;margin-bottom:4px">${from.name || "—"}</p>
-      <p style="font-size:13px;color:#555;margin-bottom:2px">${from.email}</p>
-      <p style="font-size:13px;color:#555;white-space:pre-line">${from.address}</p>
+      <p style="font-size:14px;font-weight:600;margin-bottom:4px">${escapeHtml(from.name) || "—"}</p>
+      <p style="font-size:13px;color:#555;margin-bottom:2px">${escapeHtml(from.email)}</p>
+      <p style="font-size:13px;color:#555;white-space:pre-line">${escapeHtml(from.address)}</p>
     </div>
     <div>
       <p style="font-size:11px;text-transform:uppercase;letter-spacing:1px;color:#999;margin-bottom:8px">Bill To</p>
-      <p style="font-size:14px;font-weight:600;margin-bottom:4px">${billTo.name || "—"}</p>
-      <p style="font-size:13px;color:#555;margin-bottom:2px">${billTo.email}</p>
-      <p style="font-size:13px;color:#555;white-space:pre-line">${billTo.address}</p>
+      <p style="font-size:14px;font-weight:600;margin-bottom:4px">${escapeHtml(billTo.name) || "—"}</p>
+      <p style="font-size:13px;color:#555;margin-bottom:2px">${escapeHtml(billTo.email)}</p>
+      <p style="font-size:13px;color:#555;white-space:pre-line">${escapeHtml(billTo.address)}</p>
     </div>
   </div>
 
@@ -151,7 +151,7 @@ function buildPrintHtml(
     notes.trim()
       ? `<div style="border-top:1px solid #e5e7eb;padding-top:24px">
     <p style="font-size:11px;text-transform:uppercase;letter-spacing:1px;color:#999;margin-bottom:8px">Notes / Terms</p>
-    <p style="font-size:13px;color:#555;white-space:pre-line">${notes}</p>
+    <p style="font-size:13px;color:#555;white-space:pre-line">${escapeHtml(notes)}</p>
   </div>`
       : ""
   }

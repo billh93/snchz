@@ -2,7 +2,7 @@
 
 import { useState, useCallback } from "react";
 import { motion } from "framer-motion";
-import { cn } from "@/lib/utils";
+import { cn, escapeHtml } from "@/lib/utils";
 import { Download, Copy, Check, ExternalLink } from "lucide-react";
 
 type BgStyle = "dark" | "gradient" | "image";
@@ -26,7 +26,10 @@ function generateWaitlistHTML(config: {
   logoUrl: string;
   ctaText: string;
 }): string {
-  const { productName, headline, subheadline, brandColor, bgStyle, bgImageUrl, logoUrl, ctaText } = config;
+  const { productName, headline, subheadline, brandColor: rawColor, bgStyle, bgImageUrl, logoUrl, ctaText } = config;
+
+  const brandColor = /^#[0-9a-fA-F]{3,8}$/.test(rawColor) ? rawColor : "#6366f1";
+  const safeBgUrl = bgImageUrl.trim().replace(/'/g, "");
 
   let bgCSS: string;
   switch (bgStyle) {
@@ -34,8 +37,8 @@ function generateWaitlistHTML(config: {
       bgCSS = `background:linear-gradient(135deg,#0a0a0a 0%,${brandColor}22 50%,#0a0a0a 100%);`;
       break;
     case "image":
-      bgCSS = bgImageUrl.trim()
-        ? `background:linear-gradient(rgba(0,0,0,0.75),rgba(0,0,0,0.85)),url('${bgImageUrl.trim()}') center/cover no-repeat;`
+      bgCSS = safeBgUrl
+        ? `background:linear-gradient(rgba(0,0,0,0.75),rgba(0,0,0,0.85)),url('${safeBgUrl}') center/cover no-repeat;`
         : `background:#0a0a0a;`;
       break;
     default:
@@ -47,7 +50,7 @@ function generateWaitlistHTML(config: {
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>${productName || "Coming Soon"}</title>
+<title>${escapeHtml(productName) || "Coming Soon"}</title>
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 body{${bgCSS}color:#fff;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;min-height:100vh;display:flex;align-items:center;justify-content:center;padding:2rem 1rem}
@@ -68,13 +71,13 @@ h1{font-size:clamp(2rem,5vw,3rem);font-weight:800;line-height:1.1;margin-bottom:
 </head>
 <body>
 <div class="container">
-${logoUrl.trim() ? `<img class="logo" src="${logoUrl.trim()}" alt="${productName}">` : ""}
-${productName.trim() ? `<div class="product-name">${productName}</div>` : ""}
-<h1>${headline || "Something amazing is coming"}</h1>
-${subheadline.trim() ? `<p class="sub">${subheadline}</p>` : ""}
+${logoUrl.trim() ? `<img class="logo" src="${escapeHtml(logoUrl.trim())}" alt="${escapeHtml(productName)}">` : ""}
+${productName.trim() ? `<div class="product-name">${escapeHtml(productName)}</div>` : ""}
+<h1>${escapeHtml(headline) || "Something amazing is coming"}</h1>
+${subheadline.trim() ? `<p class="sub">${escapeHtml(subheadline)}</p>` : ""}
 <form class="form" onsubmit="return false">
 <input type="email" placeholder="you@example.com" required>
-<button type="submit">${ctaText || "Join the Waitlist"}</button>
+<button type="submit">${escapeHtml(ctaText) || "Join the Waitlist"}</button>
 </form>
 <p class="note">We\u2019ll notify you when we launch. No spam, ever.</p>
 </div>

@@ -2,7 +2,7 @@
 
 import { useState, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { cn } from "@/lib/utils";
+import { cn, escapeHtml } from "@/lib/utils";
 import { Plus, Trash2, Download, Copy, Check, FileText } from "lucide-react";
 
 type ChangeType = "Added" | "Changed" | "Fixed" | "Removed" | "Security";
@@ -76,12 +76,12 @@ function generateChangelogHTML(versions: Version[]): string {
     for (const [type, items] of grouped) {
       sections += `<div class="section">
 <h3><span class="badge" style="background:${TYPE_COLORS[type]}20;color:${TYPE_COLORS[type]};border:1px solid ${TYPE_COLORS[type]}40">${type}</span></h3>
-<ul>${items.map((item) => `<li>${item}</li>`).join("")}</ul>
+<ul>${items.map((item) => `<li>${escapeHtml(item)}</li>`).join("")}</ul>
 </div>`;
     }
 
     entries += `<div class="version">
-<h2><span class="version-tag">${v.version || "Unreleased"}</span><time>${v.date || "TBD"}</time></h2>
+<h2><span class="version-tag">${escapeHtml(v.version) || "Unreleased"}</span><time>${escapeHtml(v.date) || "TBD"}</time></h2>
 ${sections}
 </div>`;
   }
