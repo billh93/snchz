@@ -101,6 +101,7 @@ export type Tool = {
   description: string;
   status: "live" | "coming-soon";
   icon: string;
+  href: string;
 };
 
 export const TOOLS: Tool[] = [
@@ -110,26 +111,29 @@ export const TOOLS: Tool[] = [
     tagline: "MRR, churn, LTV, CAC: calculate it all",
     description:
       "Plug in your numbers, get instant SaaS health metrics with benchmarks and visualizations.",
-    status: "coming-soon",
+    status: "live",
     icon: "calculator",
+    href: "/tools/saas-calculator",
   },
   {
     slug: "prompt-lab",
     name: "AI Prompt Lab",
     tagline: "Test prompts across models, side by side",
     description:
-      "Compare outputs from GPT-4, Claude, and Gemini in real-time. Save, share, and iterate on prompts.",
-    status: "coming-soon",
+      "Write prompts, adjust temperature, and compare GPT-4o Mini outputs across runs in real-time.",
+    status: "live",
     icon: "sparkles",
+    href: "/tools/prompt-lab",
   },
   {
     slug: "status-page",
     name: "Status Page Generator",
     tagline: "Ship a status page in 60 seconds",
     description:
-      "Generate a beautiful, self-hosted status page with monitoring and incident management built in.",
-    status: "coming-soon",
+      "Configure your services, preview the result, and download a self-contained HTML status page.",
+    status: "live",
     icon: "activity",
+    href: "/tools/status-page",
   },
 ];
 

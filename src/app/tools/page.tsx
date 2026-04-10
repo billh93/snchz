@@ -1,6 +1,5 @@
 import { TOOLS } from "@/lib/data";
 import { Nav } from "@/components/nav";
-import { FlowField } from "@/components/flow-field";
 import { FadeIn, StaggerChildren } from "@/components/motion";
 import { ToolCard } from "@/components/tool-card";
 import type { Metadata } from "next";
@@ -8,13 +7,12 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Tools",
   description:
-    "Free, open-source tools for developers and founders. SaaS calculator, AI prompt lab, and more.",
+    "Free, open-source tools for developers and founders. SaaS calculator, AI prompt lab, status page generator, and more.",
 };
 
 export default function ToolsPage() {
   return (
     <>
-      <FlowField />
       <Nav />
       <main className="pt-32 pb-20 px-6 lg:px-8">
         <div className="mx-auto max-w-7xl">
@@ -27,7 +25,7 @@ export default function ToolsPage() {
                 Built to be useful
               </h1>
               <p className="mt-4 max-w-xl text-lg text-muted-foreground">
-                Open-source tools I build for developers and founders. Free
+                Open-source tools for developers and founders. Free
                 forever, no sign-up required.
               </p>
             </div>

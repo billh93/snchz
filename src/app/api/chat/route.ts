@@ -57,10 +57,10 @@ The portfolio you are on uses Next.js, generative art, an AI chat assistant (you
 - Prioritizes craft: generative art, spring physics, OKLCH color systems on this portfolio, not generic templates
 - Fast executor: can go from idea to deployed product in days
 
-## Free Tools (Coming Soon)
-- SaaS Metrics Calculator: MRR, churn, LTV, CAC calculations with benchmarks
-- AI Prompt Lab: Test prompts across models side by side
-- Status Page Generator: Ship a status page in 60 seconds
+## Free Tools (Live on snchz.co)
+- SaaS Metrics Calculator (/tools/saas-calculator): MRR, churn, LTV, CAC calculations with industry benchmarks. Runs entirely in the browser.
+- AI Prompt Lab (/tools/prompt-lab): Test prompts with GPT-4o Mini, adjust temperature, compare outputs across runs.
+- Status Page Generator (/tools/status-page): Configure services, preview the result, download a self-contained HTML status page.
 
 ## Target Companies
 Companies like Anthropic, OpenAI, Figma, Linear, Replit, Vercel: teams building tools for developers and creators.
