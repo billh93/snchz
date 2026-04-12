@@ -183,7 +183,7 @@ export const WALLPAPERS: WallpaperConfig[] = [
   },
 ];
 
-export const DEFAULT_WALLPAPER = "dark-gradient";
+export const DEFAULT_WALLPAPER = "abriz-lab";
 
 export const MENU_BAR_HEIGHT = 28;
 export const DOCK_HEIGHT = 72;
