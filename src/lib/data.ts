@@ -90,7 +90,6 @@ export const PROJECTS: Project[] = [
     year: "2021 to 2022",
     stack: ["PHP"],
     metrics: "Acquired 2022",
-    url: "https://dope.link",
   },
 ];
 

@@ -6,6 +6,7 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { NAV_ITEMS, SITE } from "@/lib/data";
 import { cn } from "@/lib/utils";
+import { Logo } from "@/components/logo";
 
 export function Nav() {
   const pathname = usePathname();
@@ -17,8 +18,9 @@ export function Nav() {
         <div className="flex h-16 items-center justify-between">
           <Link
             href="/"
-            className="font-display text-lg font-bold tracking-tight text-foreground transition-colors hover:text-foreground"
+            className="flex items-center gap-2 font-display text-lg font-bold tracking-tight text-foreground transition-colors hover:text-foreground"
           >
+            <Logo className="h-6 w-6" />
             {SITE.name}
           </Link>
 

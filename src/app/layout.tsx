@@ -1,11 +1,6 @@
 import type { Metadata } from "next";
-import dynamic from "next/dynamic";
 import { Bricolage_Grotesque, Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-
-const ChatWidget = dynamic(() =>
-  import("@/components/chat-widget").then((m) => m.ChatWidget)
-);
 
 const bricolage = Bricolage_Grotesque({
   variable: "--font-display",
@@ -152,7 +147,14 @@ export default function RootLayout({
       </head>
       <body className="min-h-dvh bg-background text-foreground antialiased">
         {children}
-        <ChatWidget />
+        <noscript>
+          <div style={{ padding: "2rem", maxWidth: "600px", margin: "0 auto", fontFamily: "system-ui" }}>
+            <h1>Bill Hinostroza — Product Engineer</h1>
+            <p>Serial builder. 5 exits. I design, engineer, and ship full-stack products from zero to acquisition.</p>
+            <p>Stack: Next.js, React, TypeScript, Python, FastAPI, PostgreSQL, OpenAI, Anthropic, Vercel, AWS</p>
+            <p>Contact: <a href="mailto:bill@abriz.ai">bill@abriz.ai</a> | <a href="https://github.com/billh93">GitHub</a> | <a href="https://www.linkedin.com/in/bill-hinostroza/">LinkedIn</a></p>
+          </div>
+        </noscript>
       </body>
     </html>
   );

@@ -16,17 +16,11 @@ function AllSeeingEye({ className }: { className?: string }) {
       <path
         d="M60 10 C30 10, 5 40, 5 40 C5 40, 30 70, 60 70 C90 70, 115 40, 115 40 C115 40, 90 10, 60 10Z"
         stroke="currentColor"
-        strokeWidth="0.5"
-        opacity="0.15"
-      />
-      <circle cx="60" cy="40" r="15" stroke="currentColor" strokeWidth="0.5" opacity="0.12" />
-      <circle cx="60" cy="40" r="5" fill="currentColor" opacity="0.08" />
-      <path
-        d="M60 5 L60 0 M60 80 L60 75 M5 40 L0 40 M120 40 L115 40"
-        stroke="currentColor"
         strokeWidth="0.3"
         opacity="0.06"
       />
+      <circle cx="60" cy="40" r="15" stroke="currentColor" strokeWidth="0.3" opacity="0.05" />
+      <circle cx="60" cy="40" r="5" fill="currentColor" opacity="0.04" />
     </svg>
   );
 }
@@ -37,7 +31,7 @@ export function HeroSection() {
       className="relative flex min-h-dvh flex-col items-start justify-center px-6 lg:px-8"
       data-initium="as above so below"
     >
-      <AllSeeingEye className="pointer-events-none absolute right-[10%] top-1/2 -translate-y-1/2 w-[300px] text-foreground opacity-40 lg:w-[500px]" />
+      <AllSeeingEye className="pointer-events-none absolute right-[10%] top-1/2 -translate-y-1/2 w-[220px] text-foreground opacity-20 lg:w-[360px]" />
 
       <div className="mx-auto w-full max-w-7xl">
         <motion.div
