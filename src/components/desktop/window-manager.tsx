@@ -92,7 +92,7 @@ function AppContent({ appId }: { appId: string }) {
     default:
       return (
         <div className="flex h-full items-center justify-center text-sm text-white/30">
-          {appId} — coming soon
+          {appId}: coming soon
         </div>
       );
   }

@@ -6,7 +6,7 @@ import { SITE, STACK_CATEGORIES, PROJECTS } from "@/lib/data";
 type Line = { text: string; type: "input" | "output" | "error" };
 
 const WELCOME = [
-  `SNCHZ OS 1.0 — ${SITE.title}`,
+  `SNCHZ OS 1.0: ${SITE.title}`,
   `Last login: ${new Date().toLocaleString()}`,
   "",
   'Type "help" for available commands.',
@@ -28,7 +28,7 @@ const COMMANDS: Record<string, (args: string[]) => string[]> = {
     "",
   ],
   about: () => [
-    `${SITE.title} — ${SITE.role}`,
+    `${SITE.title}, ${SITE.role}`,
     "",
     SITE.description,
     "",
@@ -60,7 +60,7 @@ const COMMANDS: Record<string, (args: string[]) => string[]> = {
     const file = args[0];
     if (!file) return ["usage: cat <filename>", ""];
     if (file === "about.txt") return COMMANDS.about([]);
-    if (file === "resume.pdf") return ["[Binary file — open in Preview]", ""];
+    if (file === "resume.pdf") return ["[Binary file: open in Preview]", ""];
     return [`cat: ${file}: No such file or directory`, ""];
   },
   whoami: () => [`${SITE.title.toLowerCase().replace(/\s/g, "")}`, ""],

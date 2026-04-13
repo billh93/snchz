@@ -5,7 +5,7 @@ import { FadeIn } from "@/components/motion";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "About Bill Hinostroza — Product Engineer, 5 SaaS Exits",
+  title: "About Bill Hinostroza: Product Engineer, 5 SaaS Exits",
   description:
     "Bill Hinostroza is a full-stack product engineer with 5 SaaS acquisitions. TypeScript, Python, React, Next.js, FastAPI, AI/ML. Currently seeking product engineer roles.",
 };

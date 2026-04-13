@@ -86,7 +86,7 @@ export function BioGenerator() {
       };
       setHistory((prev) => [gen, ...prev].slice(0, 3));
     } catch {
-      setError("Network error — please try again");
+      setError("Network error. Please try again");
     } finally {
       setLoading(false);
     }

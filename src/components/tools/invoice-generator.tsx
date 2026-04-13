@@ -68,7 +68,7 @@ function buildPrintHtml(
     .map(
       (item) => `
     <tr>
-      <td style="padding:10px 12px;border-bottom:1px solid #e5e7eb;text-align:left">${escapeHtml(item.description) || "—"}</td>
+      <td style="padding:10px 12px;border-bottom:1px solid #e5e7eb;text-align:left">${escapeHtml(item.description) || "-"}</td>
       <td style="padding:10px 12px;border-bottom:1px solid #e5e7eb;text-align:center">${item.quantity}</td>
       <td style="padding:10px 12px;border-bottom:1px solid #e5e7eb;text-align:right">${fmt(item.unitPrice)}</td>
       <td style="padding:10px 12px;border-bottom:1px solid #e5e7eb;text-align:right">${fmt(item.quantity * item.unitPrice)}</td>
@@ -107,13 +107,13 @@ function buildPrintHtml(
   <div style="display:grid;grid-template-columns:1fr 1fr;gap:40px;margin-bottom:40px">
     <div>
       <p style="font-size:11px;text-transform:uppercase;letter-spacing:1px;color:#999;margin-bottom:8px">From</p>
-      <p style="font-size:14px;font-weight:600;margin-bottom:4px">${escapeHtml(from.name) || "—"}</p>
+      <p style="font-size:14px;font-weight:600;margin-bottom:4px">${escapeHtml(from.name) || "-"}</p>
       <p style="font-size:13px;color:#555;margin-bottom:2px">${escapeHtml(from.email)}</p>
       <p style="font-size:13px;color:#555;white-space:pre-line">${escapeHtml(from.address)}</p>
     </div>
     <div>
       <p style="font-size:11px;text-transform:uppercase;letter-spacing:1px;color:#999;margin-bottom:8px">Bill To</p>
-      <p style="font-size:14px;font-weight:600;margin-bottom:4px">${escapeHtml(billTo.name) || "—"}</p>
+      <p style="font-size:14px;font-weight:600;margin-bottom:4px">${escapeHtml(billTo.name) || "-"}</p>
       <p style="font-size:13px;color:#555;margin-bottom:2px">${escapeHtml(billTo.email)}</p>
       <p style="font-size:13px;color:#555;white-space:pre-line">${escapeHtml(billTo.address)}</p>
     </div>

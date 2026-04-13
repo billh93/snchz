@@ -1,10 +1,10 @@
-# Bill Hinostroza — Product Engineer
+# Bill Hinostroza, Product Engineer
 
 > Serial builder with 5 SaaS exits. Full-stack product engineer building with Next.js, Python, FastAPI, and AI.
 
 ## About
 
-Bill Hinostroza is a product engineer who builds products from zero to acquisition. Over five years, he designed, engineered, and shipped five SaaS platforms — each acquired. He works across the entire stack: TypeScript, Python, React, Next.js, FastAPI, PostgreSQL, AWS, Vercel, and AI/ML (OpenAI, Anthropic, Deepgram).
+Bill Hinostroza is a product engineer who builds products from zero to acquisition. Over five years, he designed, engineered, and shipped five SaaS platforms, each acquired. He works across the entire stack: TypeScript, Python, React, Next.js, FastAPI, PostgreSQL, AWS, Vercel, and AI/ML (OpenAI, Anthropic, Deepgram).
 
 He currently runs Abriz (abriz.ai), his frontier lab for emerging technology, and is seeking product engineer roles at companies building tools for developers and creators.
 

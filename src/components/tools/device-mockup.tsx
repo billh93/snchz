@@ -578,7 +578,7 @@ export function DeviceMockup() {
             </div>
 
             <p className="text-center text-xs text-muted-foreground/50">
-              Preview only — download uses the Canvas API for a crisp 2x export
+              Preview only: download uses the Canvas API for a crisp 2x export
             </p>
 
             {/* Hidden canvas for export */}

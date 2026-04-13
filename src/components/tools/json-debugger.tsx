@@ -379,7 +379,7 @@ export function JsonDebugger() {
       const payload = JSON.parse(base64UrlDecode(parts[1]));
       return { header, payload, signature: parts[2] };
     } catch {
-      return { error: "Failed to decode JWT — check that the token is valid" };
+      return { error: "Failed to decode JWT. Check that the token is valid" };
     }
   }, [jwtInput]);
 
@@ -607,7 +607,7 @@ export function JsonDebugger() {
                             ) : (
                               <CircleCheck className="h-3.5 w-3.5" />
                             )}
-                            {isExpired ? "Expired" : "Valid"} — {expDate.toLocaleString()}
+                            {isExpired ? "Expired" : "Valid"} ({expDate.toLocaleString()})
                           </div>
                         );
                       })()}

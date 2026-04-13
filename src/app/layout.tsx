@@ -26,7 +26,7 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: {
-    default: "Bill Hinostroza — Product Engineer | 5 Exits, Full-Stack Builder",
+    default: "Bill Hinostroza, Product Engineer | 5 Exits, Full-Stack Builder",
     template: "%s | Bill Hinostroza, Product Engineer",
   },
   description:
@@ -48,7 +48,7 @@ export const metadata: Metadata = {
   authors: [{ name: "Bill Hinostroza", url: "https://snchz.co" }],
   creator: "Bill Hinostroza",
   openGraph: {
-    title: "Bill Hinostroza — Product Engineer | 5 Exits, Full-Stack Builder",
+    title: "Bill Hinostroza, Product Engineer | 5 Exits, Full-Stack Builder",
     description:
       "Product engineer with 5 SaaS acquisitions. Building full-stack products with Next.js, Python, and AI.",
     url: "https://snchz.co",
@@ -58,7 +58,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Bill Hinostroza — Product Engineer",
+    title: "Bill Hinostroza, Product Engineer",
     description:
       "Product engineer with 5 SaaS exits. Full-stack builder: Next.js, Python, AI.",
   },
@@ -78,7 +78,7 @@ const jsonLd = {
       "@type": "WebSite",
       "@id": "https://snchz.co/#website",
       url: "https://snchz.co",
-      name: "Bill Hinostroza — Product Engineer",
+      name: "Bill Hinostroza, Product Engineer",
       description:
         "Portfolio and free tools by Bill Hinostroza, a product engineer with 5 SaaS exits.",
       publisher: { "@id": "https://snchz.co/#person" },
@@ -123,7 +123,7 @@ const jsonLd = {
       "@type": "ProfilePage",
       "@id": "https://snchz.co/#profilepage",
       url: "https://snchz.co",
-      name: "Bill Hinostroza — Product Engineer Portfolio",
+      name: "Bill Hinostroza, Product Engineer Portfolio",
       mainEntity: { "@id": "https://snchz.co/#person" },
       dateCreated: "2026-01-01T00:00:00+00:00",
       dateModified: new Date().toISOString(),
@@ -153,7 +153,7 @@ export default function RootLayout({
         <GoogleAnalytics gaId={GA_MEASUREMENT_ID} />
         <noscript>
           <div style={{ padding: "2rem", maxWidth: "600px", margin: "0 auto", fontFamily: "system-ui" }}>
-            <h1>Bill Hinostroza — Product Engineer</h1>
+            <h1>Bill Hinostroza, Product Engineer</h1>
             <p>Serial builder. 5 exits. I design, engineer, and ship full-stack products from zero to acquisition.</p>
             <p>Stack: Next.js, React, TypeScript, Python, FastAPI, PostgreSQL, OpenAI, Anthropic, Vercel, AWS</p>
             <p>Contact: <a href="mailto:bill@abriz.ai">bill@abriz.ai</a> | <a href="https://github.com/billh93">GitHub</a> | <a href="https://www.linkedin.com/in/bill-hinostroza/">LinkedIn</a></p>

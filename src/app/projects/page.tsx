@@ -6,7 +6,7 @@ import { FadeIn, StaggerChildren } from "@/components/motion";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Projects by Bill Hinostroza — 5 SaaS Exits",
+  title: "Projects by Bill Hinostroza: 5 SaaS Exits",
   description:
     "Products built by Bill Hinostroza, from SaaS platforms to AI-powered analytics. Five acquisitions and counting.",
 };

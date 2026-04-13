@@ -16,7 +16,7 @@ export function NotesApp() {
         <div className="space-y-4 text-[15px] leading-relaxed text-white/70">
           <p>{SITE.description}</p>
           <p>
-            I build products end-to-end — from the first wireframe to production deployment.
+            I build products end-to-end, from the first wireframe to production deployment.
             My work spans frontend, backend, AI/ML, and infrastructure. I&apos;ve founded
             and sold 5 SaaS products, and I&apos;m currently building at Abriz, my frontier lab
             for emerging technology.

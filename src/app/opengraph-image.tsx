@@ -1,6 +1,6 @@
 import { ImageResponse } from "next/og";
 
-export const alt = "Bill Hinostroza — Product Engineer";
+export const alt = "Bill Hinostroza, Product Engineer";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -22,7 +22,7 @@ export default function OgImage() {
           fontFamily: "system-ui, -apple-system, sans-serif",
         }}
       >
-        {/* Sacred geometry background — concentric circles */}
+        {/* Sacred geometry background: concentric circles */}
         <svg
           width="600"
           height="600"
@@ -48,7 +48,7 @@ export default function OgImage() {
           <line x1="500" y1="100" x2="100" y2="500" stroke="white" strokeWidth="0.2" />
         </svg>
 
-        {/* Triangle sigil — positioned right side */}
+        {/* Triangle sigil: positioned right side */}
         <svg
           width="300"
           height="300"
