@@ -122,8 +122,8 @@ const jsonLd = {
       url: "https://snchz.co",
       name: "Bill Hinostroza — Product Engineer Portfolio",
       mainEntity: { "@id": "https://snchz.co/#person" },
-      dateCreated: "2026-01-01",
-      dateModified: new Date().toISOString().split("T")[0],
+      dateCreated: "2026-01-01T00:00:00+00:00",
+      dateModified: new Date().toISOString(),
     },
   ],
 };
