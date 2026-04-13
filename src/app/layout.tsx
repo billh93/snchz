@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
+import { GoogleAnalytics } from "@next/third-parties/google";
 import { Bricolage_Grotesque, Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+
+const GA_MEASUREMENT_ID = "G-HG7YP7VB5Y";
 
 const bricolage = Bricolage_Grotesque({
   variable: "--font-display",
@@ -147,6 +150,7 @@ export default function RootLayout({
       </head>
       <body className="min-h-dvh bg-background text-foreground antialiased">
         {children}
+        <GoogleAnalytics gaId={GA_MEASUREMENT_ID} />
         <noscript>
           <div style={{ padding: "2rem", maxWidth: "600px", margin: "0 auto", fontFamily: "system-ui" }}>
             <h1>Bill Hinostroza — Product Engineer</h1>
